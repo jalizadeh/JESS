@@ -25,3 +25,18 @@ var SQUARES = {
 }
 
 const BOOL = { FALSE:0, TRUE: 1}
+
+const FilesBrd = new Array(BRD_SQR_NUM)
+const RanksBrd = new Array(BRD_SQR_NUM)
+
+
+/*
+    Convert FR to Square number
+    e,g: a1 => 21
+*/
+function FR2SQ(f, r){
+    return (( 21 + f ) + ( r * 10 ))
+}
+
+//TODO:
+// function SQ2FR(num)
