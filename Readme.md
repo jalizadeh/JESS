@@ -67,7 +67,7 @@ Or, when at the beginning of the game, `knights` that can have access to cells o
 
 A wise solution is having a 1D array that holds all the consecutive cells. With marking each cell as `chess board` (shown in bold), it is possible to track if a piece's moves hit a `offboard` cell or not. If hits, the move is stopped at that point. This solution also solves the problem for `knight` piece.
 
-|   |   | a  | b  | c  | d  | e  | f  | g  | h  | 9  |
+|   |   | a  | b  | c  | d  | e  | f  | g  | h  |   |
 | ------------| ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ |
 |   |  0 | 1  | 2   | 3  | 4  | 5  | 6  | 7  | 8  | 9  |
 |   | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 |
@@ -92,3 +92,51 @@ FR[20] = { file: 0, rank: 0 }
 ```
 
 well, well, well, it is getting confusing 🤪
+
+
+## Day 4 - 26/01/2022
+
+Now that I'm watching [video #4](https://www.youtube.com/watch?v=u7BUK-OuWZ8&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=4), I get it better
+
+
+Regardig the solution mentioned above, we need to fill each cell with appropriate value. As we have two arrays, `Files` and `Ranks`, all 120 cells should be labled with `0..7`. Any cell that `offboard` is labled as `100`. This will lead to the following shape:
+
+    Files:      a = 0 ... h = 7
+    Ranks:      1 = 0 ... 8 = 7
+    Offboard:   100
+
+|   |   | a  | b  | c  | d  | e  | f  | g  | h  |   |
+| ------------| ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ |
+|   |  100 | 100  | 100   | 100  | 100  | 100  | 100  | 100  | 100  | 100  |
+|   | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 |
+| 1  | 100 | **a1<br/>0/0** | **b1<br/>1/0** | **c1<br/>2/0** | **d1<br/>3/0** | **e1<br/>4/0** | **f1<br/>5/0** | **g1<br/>6/0** | **h1<br/>7/0** | 100 |
+| 2  | 100 | **a2<br/>0/1** | **b2<br/>1/1** | **c2<br/>2/1** | **d2<br/>3/1** | **e2<br/>4/1** | **f2<br/>5/1** | **g2<br/>6/1** | **h2<br/>7/1** | 100 |
+| 3  | 100 | **a3<br/>0/2** | **b3<br/>1/2** | **c3<br/>2/2** | **d3<br/>3/2** | **e3<br/>4/2** | **f3<br/>5/2** | **g3<br/>6/2** | **h3<br/>7/2** | 100 |
+| 4  | 100 | **a4<br/>0/3** | **b4<br/>1/3** | **c4<br/>2/3** | **d4<br/>3/3** | **e4<br/>4/3** | **f4<br/>5/3** | **g4<br/>6/3** | **h4<br/>7/3** | 100 |
+| 5  | 100 | **a5<br/>0/4** | **b5<br/>1/4** | **c5<br/>2/4** | **d5<br/>3/4** | **e5<br/>4/4** | **f5<br/>5/4** | **g5<br/>6/4** | **h5<br/>7/4** | 100 |
+| 6  | 100 | **a6<br/>0/5** | **b6<br/>1/5** | **c6<br/>2/5** | **d6<br/>3/5** | **e6<br/>4/5** | **f6<br/>5/5** | **g6<br/>6/5** | **h6<br/>7/5** | 100 |
+| 7  | 100 | **a7<br/>0/6** | **b7<br/>1/6** | **c7<br/>2/6** | **d7<br/>3/6** | **e7<br/>4/6** | **f7<br/>5/6** | **g7<br/>6/6** | **h7<br/>7/6** | 100 |
+| 8  | 100 | **a8<br/>0/7** | **b8<br/>1/7** | **c8<br/>2/7** | **d8<br/>3/7** | **e8<br/>4/7** | **f8<br/>5/7** | **g8<br/>6/7** | **h8<br/>7/7** | 100 |
+|   | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 |
+|   | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 |
+
+How to map `F/R` data to cell index?
+
+The first cell of board starts at `21` and the distance between each rank is 10 cells
+
+```js
+function FR2SQ(file, rank){
+    return (( 21 + file ) + ( rank * 10 ))
+}
+```
+
+How to map a cell index into `F/R` data?
+
+Taking into account the first cell of the board, `21`, subtracting from any given cell index and deviding the result by 10, will give us two important values, `quotient = file` and `remainder = rank`.
+
+```js
+function SQ2FR(square){
+    const quotient = square / 10
+    const remainder = square % 10
+}
+```

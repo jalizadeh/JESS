@@ -20,7 +20,8 @@ function InitFilesRanksBrd(){
         }        
     }
 
-    console.log(FilesBrd[SQUARES.E1] +""+ RanksBrd[SQUARES.E1])
+    // console.log(FilesBrd[SQUARES.D1] +""+ RanksBrd[SQUARES.D1])
+    // console.log(FR2SQ(0,7))
 
 }
 
