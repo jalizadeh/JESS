@@ -49,9 +49,9 @@ Started the first lesson and pushed everything on [Git](https://github.com/jaliz
 Btw, I learned a lot about [console](https://console.spec.whatwg.org/). This tool is really amazing. Put the practices in the `JS Learning` folder
 
 
-A chess board has `8 Files (column)` and `8 Ranks (row)`. The issue is tracking the possible moves for each piece. E.g, if a `rook` stands on point `Rf4 = 29`, it can move in 4 different directions. Moving forward, will lead to cells `30 & 31`, and if we add an extra cell, it will become `32` which on `rank 5` and is not correct.
+A chess board has `8 Files (column)` and `8 Ranks (row)`. The issue is tracking the possible moves for each piece. E.g, if a `rook` stands on point `Rf4 = 29`, it can move in 4 different directions. Moving forward, will lead to squares `30 & 31`, and if we add an extra square, it will become `32` which on `rank 5` and is not correct.
 
-Or, when at the beginning of the game, `knights` that can have access to cells out of the board. How to calculate them?
+Or, when at the beginning of the game, `knights` that can have access to squares out of the board. How to calculate them?
 
     ❗️ In all the boards, Black is on top and White at the bottom.
 
@@ -67,7 +67,7 @@ Or, when at the beginning of the game, `knights` that can have access to cells o
 | 8 | 56 | 57 | 58 | 59 | 60 | 61 | 62 | 63 |
 
 
-A wise solution is having a 1D array that holds all the consecutive cells. With marking each cell as `chess board` (shown in bold), it is possible to track if a piece's moves hit a `offboard` cell or not. If hits, the move is stopped at that point. This solution also solves the problem for `knight` piece.
+A wise solution is having a 1D array that holds all the consecutive squares. With marking each square as `chess board` (shown in bold), it is possible to track if a piece's moves hit a `offboard` square or not. If hits, the move is stopped at that point. This solution also solves the problem for `knight` piece.
 
 |   |   | a  | b  | c  | d  | e  | f  | g  | h  |   |
 | ------------| ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ |
@@ -101,7 +101,7 @@ well, well, well, it is getting confusing 🤪
 Now that I'm watching [video #4](https://www.youtube.com/watch?v=u7BUK-OuWZ8&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=4), I get it better
 
 
-Regardig the solution mentioned above, we need to fill each cell with appropriate value. As we have two arrays, `Files` and `Ranks`, all 120 cells should be labled with `0..7`. Any cell that `offboard` is labled as `100`. This will lead to the following shape:
+Regardig the solution mentioned above, we need to fill each square with appropriate value. As we have two arrays, `Files` and `Ranks`, all 120 squares should be labled with `0..7`. Any square that `offboard` is labled as `100`. This will lead to the following shape:
 
     Files:      a = 0 ... h = 7
     Ranks:      1 = 0 ... 8 = 7
@@ -122,9 +122,9 @@ Regardig the solution mentioned above, we need to fill each cell with appropriat
 |   | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 |
 |   | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 |
 
-How to map `F/R` data to cell index?
+How to map `F/R` data to square index?
 
-The first cell of board starts at `21` and the distance between each rank is 10 cells
+The first square of board starts at `21` and the distance between each rank is 10 squares
 
 ```js
 function FR2SQ(file, rank){
@@ -132,16 +132,100 @@ function FR2SQ(file, rank){
 }
 ```
 
-How to map a cell index into `F/R` data?
+How to map a square index into `F/R` data?
 
-Taking into account the first cell of the board, `21`, subtracting from any given cell index and deviding the result by 10, will give us two important values, `quotient = file` and `remainder = rank`.
+Taking into account the first square of the board, `21`, subtracting from any given square index and deviding the result by 10, will give us two important values, `quotient = file` and `remainder = rank`.
 
 ```js
 function SQ2FR(square){
-    const quotient = square / 10
-    const remainder = square % 10
+    const quotient = ( Math.abs(21 - square) / 10 )
+    const remainder = ( Math.abs(21 - square) % 10 )
 }
 ```
 
 
 [Video #5](https://www.youtube.com/watch?v=RJQgJDJ-6NE&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=5) is full of important points on `Game Board` and related stuff `pieces, side, ply, 50 move, castling permission`. Each variable is explained (and will be explained later too)
+
+[Video #6](https://www.youtube.com/watch?v=N0JxMO4jx20&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=6) contains another set of game's basics that will be used for valuating the pieces and their representation in the game.
+
+- [Glossary of Chess](https://en.wikipedia.org/wiki/-Glossary_of_chess)
+- [Chess piece relative value
+](https://en.wikipedia.org/wiki/Chess_piece_relative_value)
+
+| Piece | EMPTY | WP  | WN  | WB  | WR  | WQ  | WK  | BP  | BN  | BB | BR | BQ | BK |
+| ------------| ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ |
+| Color |   ⬜️⬛️  |  ⬜️  |  ⬜️  |  ⬜️  |  ⬜️  |  ⬜️  |  ⬜️  |	⬛️  |  ⬛️  |  ⬛️  |  ⬛️  |  ⬛️  |  ⬛️   |
+| Value | 0 | 100  | 325  | 325  | 550  | 1000  | 50000  | 100  | 325  | 325 | 550 | 1000 | 50000 |
+| Big |     |    |  ✅  |  ✅  |  ✅  |  ✅  |  ✅  |    |  ✅  |  ✅  |  ✅  |  ✅  |  ✅   |
+| Major |     |    |    |    |  ✅  |  ✅  |  ✅  |    |    |    |  ✅  |  ✅  |  ✅   |
+| Minor |     |    |  ✅  |  ✅  |    |    |    |    |  ✅  |  ✅  |    |    |     |
+| Pawn  |     |  ✅  |    |    |    |    |    |  ✅  |    |    |    |    |    |	
+| Knight |     |    |  ✅  |    |    |    |    |    |  ✅  |    |    |    |    |
+| King  |     |    |    |    |    |    |  ✅  |    |    |    |    |    |  ✅   |
+| Rook/Queen |     |    |    |    |  ✅  |  ✅  |    |    |    |    |  ✅  |  ✅  |     |
+| Bishop/Queen  |     |    |    |  ✅  |    |  ✅  |    |    |    |  ✅  |    |  ✅  |     |
+| Slide |     |    |    |  ✅  |  ✅  |  ✅  |    |    |    |  ✅  |  ✅  |  ✅  |     |
+
+
+### Piece List
+On the game board there are 64 squares, while there are 16*2 squares occupied. For generating moves for each position, we should go through all the squares and find the possible moves for the side that has to move.
+
+```
+loop( pieces[] )
+    if( piece on sq == Side to move )
+        generateMoves() for the piece on sq
+```
+
+Even at the begining of the game, on which both sides have all their pieces, each side has only 16 pieces out of 64 squares. So the loop above is doing mostly unneccessary checks which can be reduced.
+
+Before giving the solution, we need to know and keep track of the current number of each piece in array `PIECES`. Inside an array with length equal to the size of array `PIECES`, we can keep all the numbers.
+
+```
+GameBoard.pieceNum = new Array(13)
+```
+
+Like at the begining of the game:
+
+| Piece | EMPTY | WP  | WN  | WB  | WR  | WQ  | WK  | BP  | BN  | BB | BR | BQ | BK |
+| ------------| ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ |
+| pieceNum |   32  |  8  |  2  |  2  |  2  |  1  |  1  |	8  |  2  |  2  |  2  |  1  |  1   |
+
+
+We always need to know how many of each piece we have and on which square they are. If we consider the maximum number of each piece than we can have on a chess board, regarding the situations that pawns' promotions, it can reach 10. Imagine, 2 already existing Knights in addition to 8 promoted pawns, we can have at max 10 Knight on board. Let's consider this also for all pieces (in theory, even King).
+
+Having this idea, we can have a 1D array that has 10 cells for each piece in array `PIECES`. 
+
+```
+Gameboard.pieceList = new Array (13 * 10)
+```
+
+This array will be like:
+
+| Index | 0 | 1  | 2  | 3  | 4  | 5  | 6  | 7  | 8  | 9 | 10 | 11 | 12 | ... |
+| ------------| ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ |
+| Square |   100  |  100  |  100  |  100  |  100  |  100  |  100  |	100  |  100  |  100  |  31  |  32  |  33   | ... |
+
+Combination of the array above and the array `pieceNum`, we can always find precisely the each pieces's square for each side
+
+```
+sqOfPiece = PieceListArray[index]
+
+index?
+PIECES.wP * 10 + wPNum -> 0 based index of number of pieces (GameBoard.pieceNum)
+or
+PIECES.wN * 10 + wNNum
+
+say we have 4 white pawns GameBoard.pceNum[wP] = 4
+
+for(pceNum = 0; pceNum < GameBoard.pceNum[wP]; ++pceNum) {
+	sq = PlistArray[wP * 10 + pceNum]
+
+}
+
+sq1 = PlistArray[wP * 10 + 0]
+sq2 = PlistArray[wP * 10 + 1]
+sq3 = PlistArray[wP * 10 + 2]
+sq4 = PlistArray[wP * 10 + 3]
+
+wP 10 -> 19
+```

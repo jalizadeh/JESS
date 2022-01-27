@@ -40,3 +40,12 @@ GameBoard.ply = 0
             false:  castling KO
 */
 GameBoard.castlePerm = 0
+
+// WHITE / BLACK material of piece
+GameBoard.material = new Array(2)
+
+/*
+    Each index keeps the current quantity of each piece
+    e.g, at the begining, pieceNum[0] = 32 which means there are 32 PIECES.EMPTY
+*/
+GameBoard.pieceNum = new Array(13)
