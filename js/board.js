@@ -20,6 +20,7 @@ GameBoard.fiftyMove = 0
 */
 GameBoard.hisPly = 0
 GameBoard.ply = 0
+GameBoard.enPas = 0
 
 /*
     Shows the available castling move for both sides. When value is converted in binary,

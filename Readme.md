@@ -49,14 +49,14 @@ Started the first lesson and pushed everything on [Git](https://github.com/jaliz
 Btw, I learned a lot about [console](https://console.spec.whatwg.org/). This tool is really amazing. Put the practices in the `JS Learning` folder
 
 
-A chess board has `8 Files (column)` and `8 Ranks (row)`. The issue is tracking the possible moves for each piece. E.g, if a `rook` stands on point `Rf4 = 29`, it can move in 4 different directions. Moving forward, will lead to squares `30 & 31`, and if we add an extra square, it will become `32` which on `rank 5` and is not correct.
+A chess board has `8 Files (column)` and `8 Ranks (row)`. The issue is tracking the possible moves for each piece. E.g, if a `rook` stands on point `Rf4 = 29`, it can move in 4 different directions. Moving forward, will lead to squares `30 & 31`, and if we add an extra square, it will become `32` which is on `rank 5` and is not correct.
 
 Or, when at the beginning of the game, `knights` that can have access to squares out of the board. How to calculate them?
 
-    ❗️ In all the boards, Black is on top and White at the bottom.
+    ❗️ In all the positions, Black is on the top and White at the bottom. Which means the White always starts first.
 
 |   | a | b | c | d | e | f | g | h |
-| ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ |
+| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
 | 1 | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
 | 2 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 |
 | 3 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 |
@@ -67,20 +67,20 @@ Or, when at the beginning of the game, `knights` that can have access to squares
 | 8 | 56 | 57 | 58 | 59 | 60 | 61 | 62 | 63 |
 
 
-A wise solution is having a 1D array that holds all the consecutive squares. With marking each square as `chess board` (shown in bold), it is possible to track if a piece's moves hit a `offboard` square or not. If hits, the move is stopped at that point. This solution also solves the problem for `knight` piece.
+A wise solution is having an 1D array that holds all the consecutive squares. With marking each square as `chess board` (shown in bold), it is possible to track if a piece's moves hit a `offboard` square or not. If hits, the move is stopped at that point. This solution also solves the problem for `knight` piece.
 
 |   |   | a  | b  | c  | d  | e  | f  | g  | h  |   |
-| ------------| ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ |
+| ------| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
 |   |  0 | 1  | 2   | 3  | 4  | 5  | 6  | 7  | 8  | 9  |
 |   | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 |
-| 1  | 20 | **21** | **22** | **23** | **24** | **25** | **26** | **27** | **28** | 29 |
-| 2  | 30 | **31** | **32** | **33** | **34** | **35** | **36** | **37** | **38** | 39 |
-| 3  | 40 | **41** | **42** | **43** | **44** | **45** | **46** | **47** | **48** | 49 |
-| 4  | 50 | **51** | **52** | **53** | **54** | **55** | **56** | **57** | **58** | 59 |
-| 5  | 60 | **61** | **62** | **63** | **64** | **65** | **66** | **67** | **68** | 69 |
-| 6  | 70 | **71** | **72** | **73** | **74** | **75** | **76** | **77** | **78** | 79 |
-| 7  | 80 | **81** | **82** | **83** | **84** | **85** | **86** | **87** | **88** | 89 |
-| 8  | 90 | **91** | **92** | **93** | **94** | **95** | **96** | **97** | **98** | 99 |
+| 1  | 20 | <h3 style="background-color:grey">**21**</h3> |<h3 style="background-color:grey">22</h3> |<h3 style="background-color:grey">23</h3> |<h3 style="background-color:grey">24</h3> |<h3 style="background-color:grey">25</h3> |<h3 style="background-color:grey">26</h3> |<h3 style="background-color:grey">27</h3> |<h3 style="background-color:grey">28</h3> | 29 |
+| 2  | 30 |<h3 style="background-color:grey">31</h3> |<h3 style="background-color:grey">32</h3> |<h3 style="background-color:grey">33</h3> |<h3 style="background-color:grey">34</h3> |<h3 style="background-color:grey">35</h3> |<h3 style="background-color:grey">36</h3> |<h3 style="background-color:grey">37</h3> |<h3 style="background-color:grey">38</h3> | 39 |
+| 3  | 40 |<h3 style="background-color:grey">41</h3> |<h3 style="background-color:grey">42</h3> |<h3 style="background-color:grey">43</h3> |<h3 style="background-color:grey">44</h3> |<h3 style="background-color:grey">45</h3> |<h3 style="background-color:grey">46</h3> |<h3 style="background-color:grey">47</h3> |<h3 style="background-color:grey">48</h3> | 49 |
+| 4  | 50 |<h3 style="background-color:grey">51</h3> |<h3 style="background-color:grey">52</h3> |<h3 style="background-color:grey">53</h3> |<h3 style="background-color:grey">54</h3> |<h3 style="background-color:grey">55</h3> |<h3 style="background-color:grey">56</h3> |<h3 style="background-color:grey">57</h3> |<h3 style="background-color:grey">58</h3> | 59 |
+| 5  | 60 |<h3 style="background-color:grey">61</h3> |<h3 style="background-color:grey">62</h3> |<h3 style="background-color:grey">63</h3> |<h3 style="background-color:grey">64</h3> |<h3 style="background-color:grey">65</h3> |<h3 style="background-color:grey">66</h3> |<h3 style="background-color:grey">67</h3> |<h3 style="background-color:grey">68</h3> | 69 |
+| 6  | 70 |<h3 style="background-color:grey">71</h3> |<h3 style="background-color:grey">72</h3> |<h3 style="background-color:grey">73</h3> |<h3 style="background-color:grey">74</h3> |<h3 style="background-color:grey">75</h3> |<h3 style="background-color:grey">76</h3> |<h3 style="background-color:grey">77</h3> |<h3 style="background-color:grey">78</h3> | 79 |
+| 7  | 80 |<h3 style="background-color:grey">81</h3> |<h3 style="background-color:grey">82</h3> |<h3 style="background-color:grey">83</h3> |<h3 style="background-color:grey">84</h3> |<h3 style="background-color:grey">85</h3> |<h3 style="background-color:grey">86</h3> |<h3 style="background-color:grey">87</h3> |<h3 style="background-color:grey">88</h3> | 89 |
+| 8  | 90 |<h3 style="background-color:grey">91</h3> |<h3 style="background-color:grey">92</h3> |<h3 style="background-color:grey">93</h3> |<h3 style="background-color:grey">94</h3> |<h3 style="background-color:grey">95</h3> |<h3 style="background-color:grey">96</h3> |<h3 style="background-color:grey">97</h3> |<h3 style="background-color:grey">98</h3> | 99 |
 |   | 100 | 101 | 102 | 103 | 104 | 105 | 106 | 107 | 108 | 109 |
 |   | 110 | 111 | 112 | 113 | 114 | 115 | 116 | 117 | 118 | 119 |
 
@@ -88,7 +88,9 @@ A wise solution is having a 1D array that holds all the consecutive squares. Wit
 
 ❓ Why in [video #3](https://www.youtube.com/watch?v=koWA_I6zmZk&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=3), we define `SQUARES` only for the back rank of each side?
 
-❓ What if instead of creating two seperate 1D array for Files and Ranks, having one array containing this data:
+❓ What if instead of creating two seperate 1D array for Files and Ranks, having one array containing such this object?
+
+In comments it was asked, and he responded `because of performance and handling arrays is easier (for him) to handle`
 ```json
 FR[20] = { file: 0, rank: 0 }
 ```
@@ -101,24 +103,24 @@ well, well, well, it is getting confusing 🤪
 Now that I'm watching [video #4](https://www.youtube.com/watch?v=u7BUK-OuWZ8&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=4), I get it better
 
 
-Regardig the solution mentioned above, we need to fill each square with appropriate value. As we have two arrays, `Files` and `Ranks`, all 120 squares should be labled with `0..7`. Any square that `offboard` is labled as `100`. This will lead to the following shape:
+Regardig the solution mentioned above, we need to fill each square with appropriate value. As we have two arrays, `Files` and `Ranks`, all 120 squares should be labled with `0..7`. Any square that is `offboard`, is labled as `100`. This will lead to the following shape:
 
     Files:      a = 0 ... h = 7
     Ranks:      1 = 0 ... 8 = 7
     Offboard:   100
 
 |   |   | a  | b  | c  | d  | e  | f  | g  | h  |   |
-| ------------| ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ |
+| ------| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
 |   |  100 | 100  | 100   | 100  | 100  | 100  | 100  | 100  | 100  | 100  |
 |   | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 |
-| 1  | 100 | **a1/21<br/>0/0** | **b1/22<br/>1/0** | **c1/23<br/>2/0** | **d1/24<br/>3/0** | **e1/25<br/>4/0** | **f1/26<br/>5/0** | **g1/27<br/>6/0** | **h1/28<br/>7/0** | 100 |
-| 2  | 100 | **a2/31<br/>0/1** | **b2/32<br/>1/1** | **c2/33<br/>2/1** | **d2/34<br/>3/1** | **e2/35<br/>4/1** | **f2/36<br/>5/1** | **g2/37<br/>6/1** | **h2/38<br/>7/1** | 100 |
-| 3  | 100 | **a3/41<br/>0/2** | **b3/42<br/>1/2** | **c3/43<br/>2/2** | **d3/44<br/>3/2** | **e3/45<br/>4/2** | **f3/46<br/>5/2** | **g3/47<br/>6/2** | **h3/48<br/>7/2** | 100 |
-| 4  | 100 | **a4/51<br/>0/3** | **b4/52<br/>1/3** | **c4/53<br/>2/3** | **d4/54<br/>3/3** | **e4/55<br/>4/3** | **f4/56<br/>5/3** | **g4/57<br/>6/3** | **h4/58<br/>7/3** | 100 |
-| 5  | 100 | **a5/61<br/>0/4** | **b5/62<br/>1/4** | **c5/63<br/>2/4** | **d5/64<br/>3/4** | **e5/65<br/>4/4** | **f5/66<br/>5/4** | **g5/67<br/>6/4** | **h5/68<br/>7/4** | 100 |
-| 6  | 100 | **a6/71<br/>0/5** | **b6/72<br/>1/5** | **c6/73<br/>2/5** | **d6/74<br/>3/5** | **e6/75<br/>4/5** | **f6/76<br/>5/5** | **g6/77<br/>6/5** | **h6/78<br/>7/5** | 100 |
-| 7  | 100 | **a7/81<br/>0/6** | **b7/82<br/>1/6** | **c7/83<br/>2/6** | **d7/84<br/>3/6** | **e7/85<br/>4/6** | **f7/86<br/>5/6** | **g7/87<br/>6/6** | **h7/88<br/>7/6** | 100 |
-| 8  | 100 | **a8/91<br/>0/7** | **b8/92<br/>1/7** | **c8/93<br/>2/7** | **d8/94<br/>3/7** | **e8/95<br/>4/7** | **f8/96<br/>5/7** | **g8/97<br/>6/7** | **h8/98<br/>7/7** | 100 |
+| 1  | 100 | <h3 style="background-color: grey">a1/21<br/>0/0</h3> | <h3 style="background-color: grey">b1/22<br/>1/0</h3> | <h3 style="background-color: grey">c1/23<br/>2/0</h3> | <h3 style="background-color: grey">d1/24<br/>3/0</h3> | <h3 style="background-color: grey">e1/25<br/>4/0</h3> | <h3 style="background-color: grey">f1/26<br/>5/0</h3> | <h3 style="background-color: grey">g1/27<br/>6/0</h3> | <h3 style="background-color: grey">h1/28<br/>7/0</h3> | 100 |
+| 2  | 100 | <h3 style="background-color: grey">a2/31<br/>0/1</h3> | <h3 style="background-color: grey">b2/32<br/>1/1</h3> | <h3 style="background-color: grey">c2/33<br/>2/1</h3> | <h3 style="background-color: grey">d2/34<br/>3/1</h3> | <h3 style="background-color: grey">e2/35<br/>4/1</h3> | <h3 style="background-color: grey">f2/36<br/>5/1</h3> | <h3 style="background-color: grey">g2/37<br/>6/1</h3> | <h3 style="background-color: grey">h2/38<br/>7/1</h3> | 100 |
+| 3  | 100 | <h3 style="background-color: grey">a3/41<br/>0/2</h3> | <h3 style="background-color: grey">b3/42<br/>1/2</h3> | <h3 style="background-color: grey">c3/43<br/>2/2</h3> | <h3 style="background-color: grey">d3/44<br/>3/2</h3> | <h3 style="background-color: grey">e3/45<br/>4/2</h3> | <h3 style="background-color: grey">f3/46<br/>5/2</h3> | <h3 style="background-color: grey">g3/47<br/>6/2</h3> | <h3 style="background-color: grey">h3/48<br/>7/2</h3> | 100 |
+| 4  | 100 | <h3 style="background-color: grey">a4/51<br/>0/3</h3> | <h3 style="background-color: grey">b4/52<br/>1/3</h3> | <h3 style="background-color: grey">c4/53<br/>2/3</h3> | <h3 style="background-color: grey">d4/54<br/>3/3</h3> | <h3 style="background-color: grey">e4/55<br/>4/3</h3> | <h3 style="background-color: grey">f4/56<br/>5/3</h3> | <h3 style="background-color: grey">g4/57<br/>6/3</h3> | <h3 style="background-color: grey">h4/58<br/>7/3</h3> | 100 |
+| 5  | 100 | <h3 style="background-color: grey">a5/61<br/>0/4</h3> | <h3 style="background-color: grey">b5/62<br/>1/4</h3> | <h3 style="background-color: grey">c5/63<br/>2/4</h3> | <h3 style="background-color: grey">d5/64<br/>3/4</h3> | <h3 style="background-color: grey">e5/65<br/>4/4</h3> | <h3 style="background-color: grey">f5/66<br/>5/4</h3> | <h3 style="background-color: grey">g5/67<br/>6/4</h3> | <h3 style="background-color: grey">h5/68<br/>7/4</h3> | 100 |
+| 6  | 100 | <h3 style="background-color: grey">a6/71<br/>0/5</h3> | <h3 style="background-color: grey">b6/72<br/>1/5</h3> | <h3 style="background-color: grey">c6/73<br/>2/5</h3> | <h3 style="background-color: grey">d6/74<br/>3/5</h3> | <h3 style="background-color: grey">e6/75<br/>4/5</h3> | <h3 style="background-color: grey">f6/76<br/>5/5</h3> | <h3 style="background-color: grey">g6/77<br/>6/5</h3> | <h3 style="background-color: grey">h6/78<br/>7/5</h3> | 100 |
+| 7  | 100 | <h3 style="background-color: grey">a7/81<br/>0/6</h3> | <h3 style="background-color: grey">b7/82<br/>1/6</h3> | <h3 style="background-color: grey">c7/83<br/>2/6</h3> | <h3 style="background-color: grey">d7/84<br/>3/6</h3> | <h3 style="background-color: grey">e7/85<br/>4/6</h3> | <h3 style="background-color: grey">f7/86<br/>5/6</h3> | <h3 style="background-color: grey">g7/87<br/>6/6</h3> | <h3 style="background-color: grey">h7/88<br/>7/6</h3> | 100 |
+| 8  | 100 | <h3 style="background-color: grey">a8/91<br/>0/7</h3> | <h3 style="background-color: grey">b8/92<br/>1/7</h3> | <h3 style="background-color: grey">c8/93<br/>2/7</h3> | <h3 style="background-color: grey">d8/94<br/>3/7</h3> | <h3 style="background-color: grey">e8/95<br/>4/7</h3> | <h3 style="background-color: grey">f8/96<br/>5/7</h3> | <h3 style="background-color: grey">g8/97<br/>6/7</h3> | <h3 style="background-color: grey">h8/98<br/>7/7</h3> | 100 |
 |   | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 |
 |   | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 |
 
@@ -153,7 +155,7 @@ function SQ2FR(square){
 ](https://en.wikipedia.org/wiki/Chess_piece_relative_value)
 
 | Piece | EMPTY | WP  | WN  | WB  | WR  | WQ  | WK  | BP  | BN  | BB | BR | BQ | BK |
-| ------------| ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ |
+| ------| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
 | Color |   ⬜️⬛️  |  ⬜️  |  ⬜️  |  ⬜️  |  ⬜️  |  ⬜️  |  ⬜️  |	⬛️  |  ⬛️  |  ⬛️  |  ⬛️  |  ⬛️  |  ⬛️   |
 | Value | 0 | 100  | 325  | 325  | 550  | 1000  | 50000  | 100  | 325  | 325 | 550 | 1000 | 50000 |
 | Big |     |    |  ✅  |  ✅  |  ✅  |  ✅  |  ✅  |    |  ✅  |  ✅  |  ✅  |  ✅  |  ✅   |
@@ -168,7 +170,7 @@ function SQ2FR(square){
 
 
 ### Piece List
-On the game board there are 64 squares, while there are 16*2 squares occupied. For generating moves for each position, we should go through all the squares and find the possible moves for the side that has to move.
+On the game board there are 64 squares, while there are 16*2 (at maximum) squares occupied. For generating moves for each position, we should go through all the squares and find the possible moves for the side that has to move.
 
 ```
 loop( pieces[] )
@@ -178,54 +180,55 @@ loop( pieces[] )
 
 Even at the begining of the game, on which both sides have all their pieces, each side has only 16 pieces out of 64 squares. So the loop above is doing mostly unneccessary checks which can be reduced.
 
-Before giving the solution, we need to know and keep track of the current number of each piece in array `PIECES`. Inside an array with length equal to the size of array `PIECES`, we can keep all the numbers.
+Before giving the solution, we need to know and keep track of the current number of each piece in the array `PIECES`. Inside an array with length equal to the size of array `PIECES`, we can keep all the numbers.
 
 ```
 GameBoard.pieceNum = new Array(13)
 ```
 
-Like at the begining of the game:
+E.g, at the begining of the game:
 
 | Piece | EMPTY | WP  | WN  | WB  | WR  | WQ  | WK  | BP  | BN  | BB | BR | BQ | BK |
-| ------------| ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ |
+| ------| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
 | pieceNum |   32  |  8  |  2  |  2  |  2  |  1  |  1  |	8  |  2  |  2  |  2  |  1  |  1   |
 
 
-We always need to know how many of each piece we have and on which square they are. If we consider the maximum number of each piece than we can have on a chess board, regarding the situations that pawns' promotions, it can reach 10. Imagine, 2 already existing Knights in addition to 8 promoted pawns, we can have at max 10 Knight on board. Let's consider this also for all pieces (in theory, even King).
+We always need to know how many of each piece we have and on which square they are. If we consider the maximum number of each piece than we can have on a chess board, regarding the situations that pawns' promotions, it can reach 10. Imagine, 2 already existing Knights in addition to 8 promoted pawns, we can have at max 10 Knights on board. Let's consider this also for all pieces (in theory, even King).
 
-Having this idea, we can have a 1D array that has 10 cells for each piece in array `PIECES`. 
+Having this idea, we can have an 1D array that has 10 cells for each piece in array `PIECES`. 
 
 ```
-Gameboard.pieceList = new Array (13 * 10)
+//+1 is make sure of enough space
+Gameboard.pieceList = new Array ((13+1) * 10)
 ```
 
-This array will be like:
+At the begining of the game, this array will be (only first 4 are shown):
 
-| Index | 0 | 1  | 2  | 3  | 4  | 5  | 6  | 7  | 8  | 9 | 10 | 11 | 12 | ... |
-| ------------| ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ |
-| Square |   100  |  100  |  100  |  100  |  100  |  100  |  100  |	100  |  100  |  100  |  31  |  32  |  33   | ... |
+| Index\Offset | 0 | 1  | 2  | 3  | 4  | 5  | 6  | 7  | 8  | 9 |
+| ------| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | 
+| 0 | 0 | 1  | 2  | 3  | 4  | 5  | 6  | 7  | 8  | 9 |
+| EMPTY |  |  |  |  |  |  |  |  |  |  |
+| 1 | 10 | 11  | 12  | 13  | 14  | 15  | 16  | 17  | 18  | 19 |
+| WP | 81  | 82  | 83  | 84  | 85  | 86  | 87  | 88  |  |  
+| 2 | 20 | 21  | 22  | 23  | 24  | 25  | 26  | 27  | 28  | 29 |
+| WN | 92 | 97 |   |  |  |  |  |  |  |  |
+| 3 | 30 | 31  | 32  | 33  | 34  | 35  | 36  | 37  | 38  | 39 |
+| WB | 93 | 96 |   |  |  |  |  |  |  |  |
+| and so on... |  |  |  |  |  |  |  |  |  |  |
+
 
 Combination of the array above and the array `pieceNum`, we can always find precisely the each pieces's square for each side
 
+We need to find the index of the piece from array   `PIECES` then get the current count of that piece. Finally, a loop over this count on the array above (`pList`), will provide the square of all that chosen piece.
+
 ```
-sqOfPiece = PieceListArray[index]
-
-index?
-PIECES.wP * 10 + wPNum -> 0 based index of number of pieces (GameBoard.pieceNum)
-or
-PIECES.wN * 10 + wNNum
-
-say we have 4 white pawns GameBoard.pceNum[wP] = 4
-
 for(pceNum = 0; pceNum < GameBoard.pceNum[wP]; ++pceNum) {
-	sq = PlistArray[wP * 10 + pceNum]
-
+	sq = pList[wP * 10 + pceNum]
 }
 
-sq1 = PlistArray[wP * 10 + 0]
-sq2 = PlistArray[wP * 10 + 1]
-sq3 = PlistArray[wP * 10 + 2]
-sq4 = PlistArray[wP * 10 + 3]
-
-wP 10 -> 19
+E.g, if the White side has only 4 pawns:
+sq1 = pList[wP * 10 + 0] = 
+sq2 = pList[wP * 10 + 1]
+sq3 = pList[wP * 10 + 2]
+sq4 = pList[wP * 10 + 3]
 ```

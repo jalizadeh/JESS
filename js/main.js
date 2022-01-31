@@ -28,4 +28,6 @@ function InitFilesRanksBrd(){
 function init(){
     console.log("init() called")
     InitFilesRanksBrd()
+    
+    console.log(GameBoard)
 }
