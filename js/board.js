@@ -1,3 +1,9 @@
+//returns the index of the given piece in the array "pList"
+function PIECEINDEX(piece, pieceNum){
+    return (piece * 10 + pieceNum)
+}
+
+
 // It will hold the current state and data of the board
 const GameBoard = {}
 
@@ -50,3 +56,9 @@ GameBoard.material = new Array(2)
     e.g, at the begining, pieceNum[0] = 32 which means there are 32 PIECES.EMPTY
 */
 GameBoard.pieceNum = new Array(13)
+
+// For complete info, check readme > day 4
+GameBoard.pList = new Array(14*10)
+
+// A unique number that represents our position on the board
+GameBoard.posKey = 0

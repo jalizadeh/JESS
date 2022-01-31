@@ -75,3 +75,11 @@ var PieceKing = [ false, false, false, false, false, false, true, false, false, 
 var PieceRookQueen = [ false, false, false, false, true, true, false, false, false, false, true, true, false ];
 var PieceBishopQueen = [ false, false, false, true, false, true, false, false, false, true, false, true, false ];
 var PieceSlides = [ false, false, false, true, true, true, false, false, false, true, true, true, false ];
+
+
+function RAND_32(){
+    return  Math.floor(((Math.random() * 255) + 1 ) << 23) | 
+            Math.floor(((Math.random() * 255) + 1 ) << 16) |
+            Math.floor(((Math.random() * 255) + 1 ) << 8 ) |
+            Math.floor(((Math.random() * 255) + 1 ) << 1 )
+}

@@ -188,7 +188,7 @@ GameBoard.pieceNum = new Array(13)
 
 E.g, at the begining of the game:
 
-| Piece | EMPTY | WP  | WN  | WB  | WR  | WQ  | WK  | BP  | BN  | BB | BR | BQ | BK |
+| Piece | EMPTY | WP ♙ | WN ♘ | WB ♗ | WR ♖ | WQ ♕ | WK ♔ | BP ♟ | BN ♞ | BB ♝ | BR ♜ | BQ ♛ | BK ♚ |
 | ------| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
 | pieceNum |   32  |  8  |  2  |  2  |  2  |  1  |  1  |	8  |  2  |  2  |  2  |  1  |  1   |
 
@@ -227,8 +227,13 @@ for(pceNum = 0; pceNum < GameBoard.pceNum[wP]; ++pceNum) {
 }
 
 E.g, if the White side has only 4 pawns:
-sq1 = pList[wP * 10 + 0] = 
+sq1 = pList[wP * 10 + 0]
 sq2 = pList[wP * 10 + 1]
 sq3 = pList[wP * 10 + 2]
 sq4 = pList[wP * 10 + 3]
 ```
+
+
+## Day 5 - 31/01/2022
+
+[Video 7](https://www.youtube.com/watch?v=oc1-_SEitfM&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=7) is all about the basics of generating a unique position key keepting track of all states. To be continued...
