@@ -236,4 +236,9 @@ sq4 = pList[wP * 10 + 3]
 
 ## Day 5 - 31/01/2022
 
-[Video 7](https://www.youtube.com/watch?v=oc1-_SEitfM&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=7) is all about the basics of generating a unique position key keepting track of all states. To be continued...
+[Video 7](https://www.youtube.com/watch?v=oc1-_SEitfM&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=7) is all about the basics of generating a unique position key keeping track of all states. To be continued...
+
+
+## Day 6 - 01/02/2022
+
+[Video 8](https://www.youtube.com/watch?v=Zx-rN36tc78&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=8), the mplementation of `GameBoard.posKey` from previous session. Let's trust him. I don't really digest this much data and variables, just waiting for a point that these are used...

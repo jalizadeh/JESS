@@ -1,24 +1,24 @@
-const BRD_SQR_NUM = 120
+var BRD_SQR_NUM = 120
 
-const PIECES = {
+var PIECES = {
     EMPTY : 0,
     wP : 1, wN : 2, wB : 3, wR : 4,  wQ : 5,  wK : 6,
     bP : 7, bN : 8, bB : 9, bR : 10, bQ : 11, bK : 12
 }
 
-const FILES = { 
+var FILES = { 
     FILE_A : 0, FILE_B : 1, FILE_C : 2, FILE_D : 3,
     FILE_E : 4, FILE_F : 5, FILE_G : 6, FILE_H : 7, FILE_NONE : 8
 }
 
-const RANKS = {
+var RANKS = {
     RANK_1 : 0, RANK_2 : 1, RANK_3 : 2, RANK_4 : 3,
     RANK_5 : 4, RANK_6 : 5, RANK_7 : 6, RANK_8 : 7, RANK_NONE : 8
 }
 
-const COLOURS = { WHITE : 0, BLACK : 1, BOTH : 2}
+var COLOURS = { WHITE : 0, BLACK : 1, BOTH : 2}
 
-const CASTLEBIT = { WKCA : 1, WQCA : 2, BKCA : 4, BQCA : 8 }
+var CASTLEBIT = { WKCA : 1, WQCA : 2, BKCA : 4, BQCA : 8 }
 
 var SQUARES = {
     A1: 21, B1: 22, C1: 23, D1: 24, E1: 25, F1: 26, G1: 27, H1: 28,
@@ -26,10 +26,10 @@ var SQUARES = {
     NO_SQ: 99, OFFBOARD: 100
 }
 
-const BOOL = { FALSE:0, TRUE: 1}
+var BOOL = { FALSE:0, TRUE: 1}
 
-const FilesBrd = new Array(BRD_SQR_NUM)
-const RanksBrd = new Array(BRD_SQR_NUM)
+var FilesBrd = new Array(BRD_SQR_NUM)
+var RanksBrd = new Array(BRD_SQR_NUM)
 
 
 /*
@@ -76,7 +76,15 @@ var PieceRookQueen = [ false, false, false, false, true, true, false, false, fal
 var PieceBishopQueen = [ false, false, false, true, false, true, false, false, false, true, false, true, false ];
 var PieceSlides = [ false, false, false, true, true, true, false, false, false, true, true, true, false ];
 
+// Each square will have a unique hash key
+var PieceKeys = new Array(14 * 120)
+var SideKey
+var CastleKeys = new Array(16)
 
+
+/*
+    Each number is between 1-255, so 8 bits. Each is shifted left and "|" (bitwise OR) them together to create a bigger number filled with random bits. So the first number is shifted 23 left. So if that number was 10000001 (129) that becomes 1000000100000000000000000000000 and so on. Then they are all merged together with the "|" (bitwise OR) operator
+*/
 function RAND_32(){
     return  Math.floor(((Math.random() * 255) + 1 ) << 23) | 
             Math.floor(((Math.random() * 255) + 1 ) << 16) |
