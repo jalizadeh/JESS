@@ -242,3 +242,11 @@ sq4 = pList[wP * 10 + 3]
 ## Day 6 - 01/02/2022
 
 [Video 8](https://www.youtube.com/watch?v=Zx-rN36tc78&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=8), the mplementation of `GameBoard.posKey` from previous session. Let's trust him. I don't really digest this much data and variables, just waiting for a point that these are used...
+
+## Day 7 - 02/02/2022
+
+[Video 9](https://www.youtube.com/watch?v=dk5eXlZukNY&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=9), in this lucky day, I solved, myself, the functions `Sq64To120(x)` and `Sq120To64(x)`, but it seems they need `File & Rank` as inputs.
+
+And, also it seems that my solutions are wrong 😞😭
+
+To be continued...
