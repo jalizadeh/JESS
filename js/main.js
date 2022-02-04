@@ -38,6 +38,33 @@ function InitHashKeys(){
 }
 
 
+function InitSq120ToSq64(){
+    var index = 0
+    var file = FILES.FILE_A
+    var rank = RANKS.RANK_1
+    var sq = SQUARES.A1
+    var sq64 = 0
+
+    //at first set all cells with invalid square number
+    for (let index = 0; index < BRD_SQR_NUM; index++) {
+        Sq120ToSq64[index] = 65
+    }
+
+    for (let index = 0; index < 64; index++) {
+        Sq64ToSq120[index] = 120
+    }
+
+    for(rank = RANKS.RANK_1; rank <= RANKS.RANK_7; rank++){
+        for(file = FILES.FILE_A; file <= FILES.FILE_H; file++){
+            sq = FR2SQ(file, rank)
+            Sq64ToSq120[sq64] = sq
+            Sq120ToSq64[sq] = sq64
+            sq64++
+        }
+    }
+}
+
+
 function init(){
     console.log("init() called")
     InitFilesRanksBrd()

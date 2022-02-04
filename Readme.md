@@ -250,3 +250,24 @@ sq4 = pList[wP * 10 + 3]
 And, also it seems that my solutions are wrong 😞😭
 
 To be continued...
+
+
+## Day 8 - 04/02/2022
+
+My solution was correct, but I was missing `~~` for calculating the `quotient`. I just leave the following methods here for future (who knows)
+
+```js
+function Sq64To120(x){
+    let dec = x/8
+    let q = ~~dec
+    let r = x%8
+    return (q*10) + (21+r)
+}
+
+function Sq120To64(x){
+    let dec = x/10
+    let q = ~~dec - 2
+    let r = x%10
+    return (q*8) + Math.abs(r-1)
+}
+```

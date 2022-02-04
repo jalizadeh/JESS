@@ -81,6 +81,9 @@ var PieceKeys = new Array(14 * 120)
 var SideKey
 var CastleKeys = new Array(16)
 
+var Sq120ToSq64 = new Array(BRD_SQR_NUM)
+var Sq64ToSq120 = new Array(64)
+
 
 /*
     Each number is between 1-255, so 8 bits. Each is shifted left and "|" (bitwise OR) them together to create a bigger number filled with random bits. So the first number is shifted 23 left. So if that number was 10000001 (129) that becomes 1000000100000000000000000000000 and so on. Then they are all merged together with the "|" (bitwise OR) operator
@@ -90,4 +93,12 @@ function RAND_32(){
             Math.floor(((Math.random() * 255) + 1 ) << 16) |
             Math.floor(((Math.random() * 255) + 1 ) << 8 ) |
             Math.floor(((Math.random() * 255) + 1 ) << 1 )
+}
+
+function SQ64(sq120){
+    return Sq120ToSq64[sq120]
+}
+
+function SQ120(sq64){
+    return Sq64ToSq120[sq64]
 }
