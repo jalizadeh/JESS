@@ -28,6 +28,10 @@ var SQUARES = {
 
 var BOOL = { FALSE:0, TRUE: 1}
 
+var MAXGAMEMOVES = 2048
+var MAXPOSITIONMOVES = 256
+var MAXDEPTH = 64
+
 var FilesBrd = new Array(BRD_SQR_NUM)
 var RanksBrd = new Array(BRD_SQR_NUM)
 

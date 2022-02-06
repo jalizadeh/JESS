@@ -58,10 +58,14 @@ GameBoard.material = new Array(2)
 GameBoard.pieceNum = new Array(13)
 
 // For complete info, check readme > day 4
-GameBoard.pList = new Array(14*10)
+GameBoard.pList = new Array(14*120)
 
 // A unique number that represents our position on the board
 GameBoard.posKey = 0
+
+GameBoard.moveList = new Array(MAXDEPTH * MAXPOSITIONMOVES)
+GameBoard.moveScores = new Array(MAXDEPTH * MAXPOSITIONMOVES)
+GameBoard.moveListStart = new Array(MAXDEPTH)
 
 
 function GeneratePosKey(){
@@ -87,4 +91,28 @@ function GeneratePosKey(){
     finalKey ^= CastleKeys[GameBoard.castlePerm]
 
     return finalKey
+}
+
+
+function ResetBoard(){
+    var index = 0
+
+    for(index=0; index < BRD_SQR_NUM;   index++){ GameBoard.pieces[index] = SQUARES.OFFBOARD    }
+    for(index=0; index < 64;            index++){ GameBoard.pieces[SQ120(index)] = PIECES.EMPTY }
+    for(index=0; index < 14 * 120;      index++){ GameBoard.pList[index] = PIECES.EMPTY         }
+    for(index=0; index < 2;             index++){ GameBoard.material[index] = 0                 }
+    for(index=0; index < 13;            index++){ GameBoard.pieceNum[index] = 0                 }
+
+    GameBoard.side = COLOURS.BOTH
+    GameBoard.enPas = SQUARES.NO_SQ
+    GameBoard.fiftyMove = 0
+    GameBoard.ply = 0
+    GameBoard.hisPly = 0
+    GameBoard.castlePerm = 0
+    GameBoard.posKey = 0
+    GameBoard.moveListStart[GameBoard.ply] = 0
+}
+
+function ParseFen(fen){
+    ResetBoard()
 }

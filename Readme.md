@@ -271,3 +271,32 @@ function Sq120To64(x){
     return (q*8) + Math.abs(r-1)
 }
 ```
+
+
+Btw, among the comments of video #9, I got this solution for `Sq64To120(x)` that seems intresting
+
+```js
+function Sq64To120(n){
+    var offset=21
+    if(n>7){
+        offset += (Math.floor(n/8))*2
+    }
+    
+    return (n + offset)
+}
+```
+
+
+## Day 9 - 05/02/2022
+
+[Video 10](https://www.youtube.com/watch?v=5tfuJOTyv20&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=10) is the first part of parsing the `FEN Position String`. [Forsyth–Edwards Notation (FEN)](https://en.wikipedia.org/wiki/Forsyth%E2%80%93Edwards_Notation) is a standard notation for describing a particular board position of a chess game. The purpose of `FEN` is to provide all the necessary information to restart a game from a particular position.
+
+Here's the `FEN` for the starting position:
+
+```
+rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
+```
+
+| Rank 8 | | Rank 7 | | Rank 6  | | Rank 5 | | Rank 4  | | Rank 3 | | Rank 2 | | Rank 1 | Active Side | Castling Availability | En passant  | Halfmove Clock | Fullmove number  |
+| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | 
+| rnbqkbnr  | / | pppppppp  | / | 8  | / | 8  | / | 8 | / | 8  | / | PPPPPPPP | / | RNBQKBNR  | w  | KQkq  | - | 0 | 1 |
