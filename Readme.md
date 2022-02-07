@@ -288,7 +288,7 @@ function Sq64To120(n){
 
 
 ## Day 9 - 05/02/2022
-
+#### ▶️ FEN Position String #1
 [Video 10](https://www.youtube.com/watch?v=5tfuJOTyv20&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=10) is the first part of parsing the `FEN Position String`. [Forsyth–Edwards Notation (FEN)](https://en.wikipedia.org/wiki/Forsyth%E2%80%93Edwards_Notation) is a standard notation for describing a particular board position of a chess game. The purpose of `FEN` is to provide all the necessary information to restart a game from a particular position.
 
 Here's the `FEN` for the starting position:
@@ -300,3 +300,9 @@ rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
 | Rank 8 | | Rank 7 | | Rank 6  | | Rank 5 | | Rank 4  | | Rank 3 | | Rank 2 | | Rank 1 | Active Side | Castling Availability | En passant  | Halfmove Clock | Fullmove number  |
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | 
 | rnbqkbnr  | / | pppppppp  | / | 8  | / | 8  | / | 8 | / | 8  | / | PPPPPPPP | / | RNBQKBNR  | w  | KQkq  | - | 0 | 1 |
+
+
+
+## Day 10 - 07/02/2022
+#### ▶️ FEN Position String #2 Pieces
+[Video 11](https://www.youtube.com/watch?v=AiDN1NBIQBc&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=11)
