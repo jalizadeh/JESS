@@ -306,3 +306,9 @@ rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
 ## Day 10 - 07/02/2022
 #### ▶️ FEN Position String #2 Pieces
 [Video 11](https://www.youtube.com/watch?v=AiDN1NBIQBc&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=11)
+
+
+
+## Day 11 - 08/02/2022
+#### ▶️ FEN Position String #3
+[Video 12](https://www.youtube.com/watch?v=7FCU_Uj_Tf0&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=12)
