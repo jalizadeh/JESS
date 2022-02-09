@@ -68,6 +68,46 @@ GameBoard.moveScores = new Array(MAXDEPTH * MAXPOSITIONMOVES)
 GameBoard.moveListStart = new Array(MAXDEPTH)
 
 
+function PrintBoard(){
+    var sq, file, rank, piece
+
+    console.log('\n------- Game Board -------\n')
+
+    for(rank = RANKS.RANK_8; rank >= RANKS.RANK_1; rank--){
+        var line = (RankChar[rank] + ' ')
+        for(file = FILES.FILE_A; file <= FILES.FILE_H; file++){
+            sq = FR2SQ(file, rank)
+            piece = GameBoard.pieces[sq]
+            line += (' ' + PceChar[piece] + ' ')
+        }
+        console.log(line)
+    }
+
+    var line = '  '
+    for(file = FILES.FILE_A; file <= FILES.FILE_H; file++){
+        line += (' ' + FileChar[file] + ' ')
+    }
+    
+    console.log('')
+    console.log(line)
+    
+    console.log('')
+    console.log('Side:\t' + SideChar[GameBoard.side])
+    console.log('enPas:\t' + GameBoard.enPas)
+    
+    line = ''
+
+    if(GameBoard.castlePerm & CASTLEBIT.WKCA) line += 'K'
+    if(GameBoard.castlePerm & CASTLEBIT.WQCA) line += 'Q'
+    if(GameBoard.castlePerm & CASTLEBIT.BKCA) line += 'k'
+    if(GameBoard.castlePerm & CASTLEBIT.BQCA) line += 'q'
+    console.log('Castle:\t' + line)
+    
+    console.log('Key:\t' + GameBoard.posKey.toString(16))
+}
+
+
+
 function GeneratePosKey(){
     var sq = 0
     var finalKey = 0

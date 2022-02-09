@@ -312,3 +312,30 @@ rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
 ## Day 11 - 08/02/2022
 #### ▶️ FEN Position String #3
 [Video 12](https://www.youtube.com/watch?v=7FCU_Uj_Tf0&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=12)
+
+
+## Day 12 - 09/02/2022
+#### ▶️ Print Board to console
+[Video 13](https://www.youtube.com/watch?v=xHI4RKK_Sk8&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=13)
+
+And this is the result in console
+
+```
+------- Game Board -------
+
+8  r  n  b  q  k  b  n  r 
+7  p  p  p  p  p  p  p  p 
+6  .  .  .  .  .  .  .  . 
+5  .  .  .  .  .  .  .  . 
+4  .  .  .  .  .  .  .  . 
+3  .  .  .  .  .  .  .  . 
+2  P  P  P  P  P  P  P  P 
+1  R  N  B  Q  K  B  N  R 
+
+   a  b  c  d  e  f  g  h 
+
+Side:	w
+enPas:	99
+Castle:	KQkq
+Key:	79162464
+```
