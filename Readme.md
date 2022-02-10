@@ -146,9 +146,9 @@ function SQ2FR(square){
 ```
 
 
-[Video #5](https://www.youtube.com/watch?v=RJQgJDJ-6NE&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=5) is full of important points on `Game Board` and related stuff `pieces, side, ply, 50 move, castling permission`. Each variable is explained (and will be explained later too)
+#### ▶️ [Video #5](https://www.youtube.com/watch?v=RJQgJDJ-6NE&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=5) is full of important points on `Game Board` and related stuff `pieces, side, ply, 50 move, castling permission`. Each variable is explained (and will be explained later too)
 
-[Video #6](https://www.youtube.com/watch?v=N0JxMO4jx20&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=6) contains another set of game's basics that will be used for valuating the pieces and their representation in the game.
+#### ▶️ [Video #6](https://www.youtube.com/watch?v=N0JxMO4jx20&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=6) contains another set of game's basics that will be used for valuating the pieces and their representation in the game.
 
 - [Glossary of Chess](https://en.wikipedia.org/wiki/-Glossary_of_chess)
 - [Chess piece relative value
@@ -235,17 +235,14 @@ sq4 = pList[wP * 10 + 3]
 
 
 ## Day 5 - 31/01/2022
-
-[Video 7](https://www.youtube.com/watch?v=oc1-_SEitfM&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=7) is all about the basics of generating a unique position key keeping track of all states. To be continued...
+#### ▶️ [Video 7](https://www.youtube.com/watch?v=oc1-_SEitfM&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=7) is all about the basics of generating a unique position key keeping track of all states. To be continued...
 
 
 ## Day 6 - 01/02/2022
-
-[Video 8](https://www.youtube.com/watch?v=Zx-rN36tc78&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=8), the mplementation of `GameBoard.posKey` from previous session. Let's trust him. I don't really digest this much data and variables, just waiting for a point that these are used...
+#### ▶️ [Video 8](https://www.youtube.com/watch?v=Zx-rN36tc78&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=8), the mplementation of `GameBoard.posKey` from previous session. Let's trust him. I don't really digest this much data and variables, just waiting for a point that these are used...
 
 ## Day 7 - 02/02/2022
-
-[Video 9](https://www.youtube.com/watch?v=dk5eXlZukNY&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=9), in this lucky day, I solved, myself, the functions `Sq64To120(x)` and `Sq120To64(x)`, but it seems they need `File & Rank` as inputs.
+#### ▶️ [Video 9](https://www.youtube.com/watch?v=dk5eXlZukNY&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=9), in this lucky day, I solved, myself, the functions `Sq64To120(x)` and `Sq120To64(x)`, but it seems they need `File & Rank` as inputs.
 
 And, also it seems that my solutions are wrong 😞😭
 
@@ -288,8 +285,7 @@ function Sq64To120(n){
 
 
 ## Day 9 - 05/02/2022
-#### ▶️ FEN Position String #1
-[Video 10](https://www.youtube.com/watch?v=5tfuJOTyv20&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=10) is the first part of parsing the `FEN Position String`. [Forsyth–Edwards Notation (FEN)](https://en.wikipedia.org/wiki/Forsyth%E2%80%93Edwards_Notation) is a standard notation for describing a particular board position of a chess game. The purpose of `FEN` is to provide all the necessary information to restart a game from a particular position.
+#### ▶️ [Video 10 - FEN Position String #1](https://www.youtube.com/watch?v=5tfuJOTyv20&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=10) is the first part of parsing the `FEN Position String`. [Forsyth–Edwards Notation (FEN)](https://en.wikipedia.org/wiki/Forsyth%E2%80%93Edwards_Notation) is a standard notation for describing a particular board position of a chess game. The purpose of `FEN` is to provide all the necessary information to restart a game from a particular position.
 
 Here's the `FEN` for the starting position:
 
@@ -304,19 +300,16 @@ rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
 
 
 ## Day 10 - 07/02/2022
-#### ▶️ FEN Position String #2 Pieces
-[Video 11](https://www.youtube.com/watch?v=AiDN1NBIQBc&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=11)
+#### ▶️ [Video 11 - FEN Position String #2 Pieces](https://www.youtube.com/watch?v=AiDN1NBIQBc&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=11)
 
 
 
 ## Day 11 - 08/02/2022
-#### ▶️ FEN Position String #3
-[Video 12](https://www.youtube.com/watch?v=7FCU_Uj_Tf0&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=12)
+#### ▶️ [Video 12 - FEN Position String #3](https://www.youtube.com/watch?v=7FCU_Uj_Tf0&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=12)
 
 
 ## Day 12 - 09/02/2022
-#### ▶️ Print Board to console
-[Video 13](https://www.youtube.com/watch?v=xHI4RKK_Sk8&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=13)
+#### ▶️ [Video 13 - Print Board to console](https://www.youtube.com/watch?v=xHI4RKK_Sk8&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=13)
 
 And this is the result in console
 
@@ -339,3 +332,7 @@ enPas:	99
 Castle:	KQkq
 Key:	79162464
 ```
+
+
+## Day 12 - 09/02/2022
+#### ▶️ [Video 14 - Set FEN From the GUI](https://www.youtube.com/watch?v=eCxH-8yoFjU&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=14)

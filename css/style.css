@@ -1,0 +1,14 @@
+header {
+    font-size: 25px;
+    margin: 10px;
+}
+
+#FenInDev {
+    position: relative;
+    left: 60px;
+}
+
+#fenIn {
+    width: 480px;
+    left: 60px;
+}
