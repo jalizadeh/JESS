@@ -134,14 +134,34 @@ function GeneratePosKey(){
 }
 
 
+function UpdateListsMaterial(){
+    var piece, sq, index, colour
+
+    for(index=0; index < 14 * 120;      index++){ GameBoard.pList[index] = PIECES.EMPTY         }
+    for(index=0; index < 2;             index++){ GameBoard.material[index] = 0                 }
+    for(index=0; index < 13;            index++){ GameBoard.pieceNum[index] = 0                 }
+
+    for(index=0; index < 64; index++){
+        sq = SQ120(index)
+        piece = GameBoard.pieces[sq]
+        if(piece != PIECES.EMPTY){
+            console.log('piece ' + piece + ' on ' + sq)
+            colour = PieceCol[piece]
+
+            GameBoard.material[colour] += PieceVal[piece]
+
+            GameBoard.pList[PIECEINDEX(piece, GameBoard.pieceNum[piece])] = sq
+            GameBoard.pieceNum[piece]++
+        }
+    }
+}
+
+
 function ResetBoard(){
     var index = 0
 
     for(index=0; index < BRD_SQR_NUM;   index++){ GameBoard.pieces[index] = SQUARES.OFFBOARD    }
     for(index=0; index < 64;            index++){ GameBoard.pieces[SQ120(index)] = PIECES.EMPTY }
-    for(index=0; index < 14 * 120;      index++){ GameBoard.pList[index] = PIECES.EMPTY         }
-    for(index=0; index < 2;             index++){ GameBoard.material[index] = 0                 }
-    for(index=0; index < 13;            index++){ GameBoard.pieceNum[index] = 0                 }
 
     GameBoard.side = COLOURS.BOTH
     GameBoard.enPas = SQUARES.NO_SQ
@@ -242,4 +262,6 @@ function ParseFen(fen){
     }
     
     GameBoard.posKey = GeneratePosKey()
+
+    UpdateListsMaterial()
 }

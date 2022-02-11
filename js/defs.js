@@ -113,3 +113,7 @@ function SQ64(sq120){
 function SQ120(sq64){
     return Sq64ToSq120[sq64]
 }
+
+function PIECEINDEX(piece, pieceNum){
+    return (piece * 10 + pieceNum)
+}

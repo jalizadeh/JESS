@@ -348,3 +348,6 @@ Key:	79162464
 
 ## Day 13 - 10/02/2022
 #### ▶️ [Video 14 - Set FEN From the GUI](https://www.youtube.com/watch?v=eCxH-8yoFjU&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=14)
+
+## Day 14 - 11/02/2022
+#### ▶️ [Video 15 - Piece Lists](https://www.youtube.com/watch?v=TaWlVdsj1us&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=15)
