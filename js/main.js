@@ -13,7 +13,7 @@ function InitFilesRanksBrd(){
     }
 
     for (let f = FILES.FILE_A; f <= FILES.FILE_H; f++) {
-        for (let r = RANKS.RANK_1; r < RANKS.RANK_8; r++) {
+        for (let r = RANKS.RANK_1; r <= RANKS.RANK_8; r++) {
             FilesBrd[FR2SQ(f, r)] = f
             RanksBrd[FR2SQ(f, r)] = r
         }        
@@ -56,7 +56,7 @@ function InitSq120ToSq64(){
         Sq64ToSq120[index] = 120
     }
 
-    for(rank = RANKS.RANK_1; rank <= RANKS.RANK_7; rank++){
+    for(rank = RANKS.RANK_1; rank <= RANKS.RANK_8; rank++){
         for(file = FILES.FILE_A; file <= FILES.FILE_H; file++){
             sq = FR2SQ(file, rank)
             Sq64ToSq120[sq64] = sq

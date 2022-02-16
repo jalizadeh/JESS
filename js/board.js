@@ -134,6 +134,16 @@ function GeneratePosKey(){
 }
 
 
+function PrintPieceLists(){
+    var piece, pceNum
+
+    for(piece=PIECES.wP; piece <= PIECES.bK; piece++){
+        for(pceNum=0; pceNum < GameBoard.pieceNum[piece]; pceNum++){
+            console.log('Piece ' + PceChar[piece] + ' on ' + PrSq(GameBoard.pList[PIECEINDEX(piece, pceNum)]))
+        }
+    }
+}
+
 function UpdateListsMaterial(){
     var piece, sq, index, colour
 
@@ -145,7 +155,7 @@ function UpdateListsMaterial(){
         sq = SQ120(index)
         piece = GameBoard.pieces[sq]
         if(piece != PIECES.EMPTY){
-            console.log('piece ' + piece + ' on ' + sq)
+            // console.log('piece ' + piece + ' on ' + sq)
             colour = PieceCol[piece]
 
             GameBoard.material[colour] += PieceVal[piece]
@@ -154,6 +164,8 @@ function UpdateListsMaterial(){
             GameBoard.pieceNum[piece]++
         }
     }
+
+    PrintPieceLists()
 }
 
 

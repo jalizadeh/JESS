@@ -351,3 +351,10 @@ Key:	79162464
 
 ## Day 14 - 11/02/2022
 #### ▶️ [Video 15 - Piece Lists](https://www.youtube.com/watch?v=TaWlVdsj1us&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=15)
+
+## Day 15~18 - 12~16/02/2022
+#### ▶️ [Video 16 - Adding io.js & Printing Piece Lists](https://www.youtube.com/watch?v=16ybkbFSWkY&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=16)
+
+A small function is added for printing the list of squares (used for future debuggings)
+
+There was a bug not listing the last rank, I was struggling finding it. I found this nice [web](https://raygun.com/learn/javascript-debugging-tips), however the bug was deep inside `main` section.
