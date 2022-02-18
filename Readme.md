@@ -158,7 +158,7 @@ Another set of game's basics that will be used for valuating the pieces and thei
 - [Chess piece relative value
 ](https://en.wikipedia.org/wiki/Chess_piece_relative_value)
 
-| Piece | EMPTY | WP  | WN  | WB  | WR  | WQ  | WK  | BP  | BN  | BB | BR | BQ | BK |
+| Piece | EMPTY | WP ♙ | WN ♘ | WB ♗ | WR ♖ | WQ ♕ | WK ♔ | BP ♟ | BN ♞ | BB ♝ | BR ♜ | BQ ♛ | BK ♚ |
 | ------| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
 | Color |   ⬜️⬛️  |  ⬜️  |  ⬜️  |  ⬜️  |  ⬜️  |  ⬜️  |  ⬜️  |	⬛️  |  ⬛️  |  ⬛️  |  ⬛️  |  ⬛️  |  ⬛️   |
 | Value | 0 | 100  | 325  | 325  | 550  | 1000  | 50000  | 100  | 325  | 325 | 550 | 1000 | 50000 |
@@ -352,9 +352,26 @@ Key:	79162464
 ## Day 14 - 11/02/2022
 #### ▶️ [Video 15 - Piece Lists](https://www.youtube.com/watch?v=TaWlVdsj1us&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=15)
 
-## Day 15~18 - 12~16/02/2022
+## Day 15-18 - 12~16/02/2022
 #### ▶️ [Video 16 - Adding io.js & Printing Piece Lists](https://www.youtube.com/watch?v=16ybkbFSWkY&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=16)
 
 A small function is added for printing the list of squares (used for future debuggings)
 
-There was a bug not listing the last rank, I was struggling finding it. I found this nice [web](https://raygun.com/learn/javascript-debugging-tips), however the bug was deep inside `main` section.
+There was a bug not listing the last rank, I was struggling finding it. I found this nice [article](https://raygun.com/learn/javascript-debugging-tips), however the bug was deep inside `main` section.
+
+## Day 19 - 17/02/2022
+#### ▶️ [Is A Square Attacked #1](https://www.youtube.com/watch?v=qPAt8tDcljk&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=17)
+
+How to understand if a square is attacked?
+> 1. Consider Black side on the top, White on the bottom
+> 2. All numbers are 120-squares game board
+- Pawn
+    - It's better to start by asking 'which side is asking it'. Pawns behave differently. Pawns only attack one rank far from them. The Black Pawn attacks ranks 3-8 while White Pawns attack ranks 6-1
+    - E.g, if a White piece be on square 65 (e5), it can be threatened by Pawns on squares 54 (d4) and 56 (f4). So for calculating if a White piece is under attack or not, it is just needed to check if on square `sq - 11` and `sq - 9`, there is any Black Pawn or not
+
+    |   |   | a  | b  | c  | d  | e  | f  | g  | h  |   |
+    | ------| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
+    | 4  | 50 |  |  |  | <h3 style="background-color:red">♟</h3> |  | <h3 style="background-color:red">♟</h3> |  |  | 59 |
+    | 5  | 60 |  |  |  |  | <h3 style="background-color:green">♙</h3> |  |  |  | 69 |
+
+    - And the calculation is vice versa for threatened Black Pawn just by  `sq + 11` and `sq + 9` to find the White Pawns

@@ -276,4 +276,23 @@ function ParseFen(fen){
     GameBoard.posKey = GeneratePosKey()
 
     UpdateListsMaterial()
+
+    console.log(SqAttacked(41,COLOURS.WHITE))
+}
+
+// "sq" from side's point of view, is under attack?
+function SqAttacked(sq, side){
+    var pce, t_sq, index
+    
+    if(side == COLOURS.WHITE){
+        if(GameBoard.pieces[sq - 11] == PIECES.wP || GameBoard.pieces[sq - 9] == PIECES.wP){
+            return true
+        }
+    } else {
+        if(GameBoard.pieces[sq + 11] == PIECES.bP || GameBoard.pieces[sq + 9] == PIECES.bP){
+            return true
+        }
+    }
+
+    return false
 }
