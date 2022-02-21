@@ -56,7 +56,7 @@ Or, when at the beginning of the game, `knights` that can have access to squares
     ❗️ In all the positions, Black is on the top and White at the bottom. Which means the White always starts first.
 
 |   | a | b | c | d | e | f | g | h |
-| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
+| :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: |
 | 1 | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
 | 2 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 |
 | 3 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 |
@@ -70,7 +70,7 @@ Or, when at the beginning of the game, `knights` that can have access to squares
 A wise solution is having an 1D array that holds all the consecutive squares. With marking each square as `chess board` (shown in bold), it is possible to track if a piece's moves hit a `offboard` square or not. If hits, the move is stopped at that point. This solution also solves the problem for `knight` piece.
 
 |   |   | a  | b  | c  | d  | e  | f  | g  | h  |   |
-| ------| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
+| :------:| :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: |
 |   |  0 | 1  | 2   | 3  | 4  | 5  | 6  | 7  | 8  | 9  |
 |   | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 |
 | 1  | 20 | <h3 style="background-color:grey">**21**</h3> |<h3 style="background-color:grey">22</h3> |<h3 style="background-color:grey">23</h3> |<h3 style="background-color:grey">24</h3> |<h3 style="background-color:grey">25</h3> |<h3 style="background-color:grey">26</h3> |<h3 style="background-color:grey">27</h3> |<h3 style="background-color:grey">28</h3> | 29 |
@@ -110,7 +110,7 @@ Regardig the solution mentioned above, we need to fill each square with appropri
     Offboard:   100
 
 |   |   | a  | b  | c  | d  | e  | f  | g  | h  |   |
-| ------| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
+| :------:| :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: |
 |   |  100 | 100  | 100   | 100  | 100  | 100  | 100  | 100  | 100  | 100  |
 |   | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 |
 | 1  | 100 | <h3 style="background-color: grey">a1/21<br/>0/0</h3> | <h3 style="background-color: grey">b1/22<br/>1/0</h3> | <h3 style="background-color: grey">c1/23<br/>2/0</h3> | <h3 style="background-color: grey">d1/24<br/>3/0</h3> | <h3 style="background-color: grey">e1/25<br/>4/0</h3> | <h3 style="background-color: grey">f1/26<br/>5/0</h3> | <h3 style="background-color: grey">g1/27<br/>6/0</h3> | <h3 style="background-color: grey">h1/28<br/>7/0</h3> | 100 |
@@ -159,7 +159,7 @@ Another set of game's basics that will be used for valuating the pieces and thei
 ](https://en.wikipedia.org/wiki/Chess_piece_relative_value)
 
 | Piece | EMPTY | WP ♙ | WN ♘ | WB ♗ | WR ♖ | WQ ♕ | WK ♔ | BP ♟ | BN ♞ | BB ♝ | BR ♜ | BQ ♛ | BK ♚ |
-| ------| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
+| :------:| :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: |
 | Color |   ⬜️⬛️  |  ⬜️  |  ⬜️  |  ⬜️  |  ⬜️  |  ⬜️  |  ⬜️  |	⬛️  |  ⬛️  |  ⬛️  |  ⬛️  |  ⬛️  |  ⬛️   |
 | Value | 0 | 100  | 325  | 325  | 550  | 1000  | 50000  | 100  | 325  | 325 | 550 | 1000 | 50000 |
 | Big |     |    |  ✅  |  ✅  |  ✅  |  ✅  |  ✅  |    |  ✅  |  ✅  |  ✅  |  ✅  |  ✅   |
@@ -193,7 +193,7 @@ GameBoard.pieceNum = new Array(13)
 E.g, at the begining of the game:
 
 | Piece | EMPTY | WP ♙ | WN ♘ | WB ♗ | WR ♖ | WQ ♕ | WK ♔ | BP ♟ | BN ♞ | BB ♝ | BR ♜ | BQ ♛ | BK ♚ |
-| ------| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
+| :------:| :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: |
 | pieceNum |   32  |  8  |  2  |  2  |  2  |  1  |  1  |	8  |  2  |  2  |  2  |  1  |  1   |
 
 
@@ -209,7 +209,7 @@ Gameboard.pieceList = new Array ((13+1) * 10)
 At the begining of the game, this array will be (only first 4 are shown):
 
 | Index\Offset | 0 | 1  | 2  | 3  | 4  | 5  | 6  | 7  | 8  | 9 |
-| ------| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | 
+| :------:| :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | 
 | 0 | 0 | 1  | 2  | 3  | 4  | 5  | 6  | 7  | 8  | 9 |
 | EMPTY |  |  |  |  |  |  |  |  |  |  |
 | 1 | 10 | 11  | 12  | 13  | 14  | 15  | 16  | 17  | 18  | 19 |
@@ -306,7 +306,7 @@ rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
 ```
 
 | Rank 8 | | Rank 7 | | Rank 6  | | Rank 5 | | Rank 4  | | Rank 3 | | Rank 2 | | Rank 1 | Active Side | Castling Availability | En passant  | Halfmove Clock | Fullmove number  |
-| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | 
+| :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | 
 | rnbqkbnr  | / | pppppppp  | / | 8  | / | 8  | / | 8 | / | 8  | / | PPPPPPPP | / | RNBQKBNR  | w  | KQkq  | - | 0 | 1 |
 
 
@@ -359,19 +359,46 @@ A small function is added for printing the list of squares (used for future debu
 
 There was a bug not listing the last rank, I was struggling finding it. I found this nice [article](https://raygun.com/learn/javascript-debugging-tips), however the bug was deep inside `main` section.
 
-## Day 19 - 17/02/2022
-#### ▶️ [Is A Square Attacked #1](https://www.youtube.com/watch?v=qPAt8tDcljk&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=17)
+## Day 19-20 - 17~18/02/2022
+#### ▶️ [Video 17 - Is A Square Attacked #1](https://www.youtube.com/watch?v=qPAt8tDcljk&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=17)
 
-How to understand if a square is attacked?
-> 1. Consider Black side on the top, White on the bottom
-> 2. All numbers are 120-squares game board
+How to understand if a square is under attack?
+> 1. The following solution is accepted for `Pawn`, `King` and `Knight`
+> 2. Consider Black side on the top, White on the bottom
+> 3. All numbers are 120-squares game board
+
 - Pawn
     - It's better to start by asking 'which side is asking it'. Pawns behave differently. Pawns only attack one rank far from them. The Black Pawn attacks ranks 3-8 while White Pawns attack ranks 6-1
     - E.g, if a White piece be on square 65 (e5), it can be threatened by Pawns on squares 54 (d4) and 56 (f4). So for calculating if a White piece is under attack or not, it is just needed to check if on square `sq - 11` and `sq - 9`, there is any Black Pawn or not
 
     |   |   | a  | b  | c  | d  | e  | f  | g  | h  |   |
-    | ------| ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
-    | 4  | 50 |  |  |  | <h3 style="background-color:red">♟</h3> |  | <h3 style="background-color:red">♟</h3> |  |  | 59 |
-    | 5  | 60 |  |  |  |  | <h3 style="background-color:green">♙</h3> |  |  |  | 69 |
+    | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: |
+    | 4  | 50 | . | . | . | <h3 style="background-color:red; padding:5px">♟<br/>[-11]</h3> | &lt; | <h3 style="background-color:red; padding:5px">♟<br/>[-9]</h3> | &lt; | &lt; | &lt; |
+    | 5  | &lt; | &lt; | &lt; | &lt; | &lt; | <h3 style="background-color:green">♙</h3> | . | . | . | 69 |
 
     - And the calculation is vice versa for threatened Black Pawn just by  `sq + 11` and `sq + 9` to find the White Pawns
+
+
+## Day 21-23 - 19~21/02/2022
+#### ▶️ [Video 18 - Is A Square Attacked #2](https://www.youtube.com/watch?v=-PfhmGMV2Kc&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=18)
+
+For calculating the other threats, the variables `KnDir, RkDir, BiDir, KiDir` are defined that can be easily consumed in a loop.
+
+Note that, `QuDir` doesn't exist solelay, but it is combination of `RkDir` and `BiDir` 
+
+How to understand if a square is under attack?
+> This solution is applied on diagonal pieces `Rook`, `Bishop` and `Queen`
+
+- Rook
+    - These distances are defined in `RkDir` and `BiDir`
+
+    |   |   | a  | b  | c  | d  | e  | f  | g  | h  |   |
+    | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: |
+    | 1  | 20 | . | . | . | . | <h3 style="background-color:red; padding:5px">-10</h3> | . | . | . | 29 |
+    | 2  | 30 | . | . | . | . | <h3 style="background-color:red; padding:5px">-10</h3> | . | . | . | 39 |
+    | 3  | 40 | . | . | . | . | <h3 style="background-color:red; padding:5px">-10</h3> | . | . | . | 49 |
+    | 4  | 50 | . | . | . | . | <h3 style="background-color:red; padding:5px">-10</h3> | . | . | . | 59 |
+    | 5  | 60 | <h3 style="background-color:red; padding:5px">-1</h3> | <h3 style="background-color:red; padding:5px">-1</h3> | <h3 style="background-color:red; padding:5px">-1</h3> | <h3 style="background-color:red; padding:5px">-1</h3> | <h3 style="background-color:green">♖</h3> | <h3 style="background-color:red; padding:5px">+1</h3> | <h3 style="background-color:red; padding:5px">+1</h3> | <h3 style="background-color:red; padding:5px">+1</h3> | 69 |
+    | 6  | 70 | . | . | . | . | <h3 style="background-color:red; padding:5px">+10</h3> | . | . | . | 79 |
+    | 7  | 80 | . | . | . | . | <h3 style="background-color:red; padding:5px">+10</h3> | . | . | . | 89 |
+    | 8  | 90 | . | . | . | . | <h3 style="background-color:red; padding:5px">+10</h3> | . | . | . | 99 |

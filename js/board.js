@@ -282,8 +282,9 @@ function ParseFen(fen){
 
 // "sq" from side's point of view, is under attack?
 function SqAttacked(sq, side){
-    var pce, t_sq, index
+    var pce, temp_sq, index
     
+    //For Pawns, it can be calculated easily
     if(side == COLOURS.WHITE){
         if(GameBoard.pieces[sq - 11] == PIECES.wP || GameBoard.pieces[sq - 9] == PIECES.wP){
             return true
@@ -293,6 +294,59 @@ function SqAttacked(sq, side){
             return true
         }
     }
+
+    //For Knight, it is only needed to add the current `sq` with the defined indexes
+    for(index=0; index < 8; index++){
+        pce = GameBoard.pieces[sq + KnDir[index]]
+        if(pce != PIECES.OFFBOARD && PieceCol[pce] == side && PieceKnight[pce] == true){
+            return true
+        }
+    }
+
+    //Rook moves horizentally or vertically. Each value in RkDir array, defines the distance from current `sq` and the next `sq` that should be checked
+    for(index=0; index < 4; index++){
+        dir = RkDir[index]
+        temp_sq = sq + dir
+        pce = GameBoard.pieces[temp_sq]
+        while(pce != SQUARES.OFFBOARD){
+            if(pce != PIECES.EMPTY){
+                if(PieceRookQueen[pce] == true && PieceCol[pce] == side){
+                    return true
+                }
+                break
+            }
+            temp_sq += dir
+            pce = GameBoard.pieces[temp_sq]
+        }
+    }
+
+
+    //Bishop moves diagonally. Each value in BiDir array, defines the distance from current `sq` and the next `sq` that should be checked
+    for(index=0; index < 4; index++){
+        dir = BiDir[index]
+        temp_sq = sq + dir
+        pce = GameBoard.pieces[temp_sq]
+        while(pce != SQUARES.OFFBOARD){
+            if(pce != PIECES.EMPTY){
+                if(PieceBishopQueen[pce] == true && PieceCol[pce] == side){
+                    return true
+                }
+                break
+            }
+            temp_sq += dir
+            pce = GameBoard.pieces[temp_sq]
+        }
+    }
+
+
+    //For King, it is only needed to add the current `sq` with the defined indexes
+    for(index=0; index < 8; index++){
+        pce = GameBoard.pieces[sq + KiDir[index]]
+        if(pce != PIECES.OFFBOARD && PieceCol[pce] == side && PieceKing[pce] == true){
+            return true
+        }
+    }
+
 
     return false
 }
