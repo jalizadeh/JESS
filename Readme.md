@@ -402,3 +402,22 @@ How to understand if a square is under attack?
     | 6  | 70 | . | . | . | . | <h3 style="background-color:red; padding:5px">+10</h3> | . | . | . | 79 |
     | 7  | 80 | . | . | . | . | <h3 style="background-color:red; padding:5px">+10</h3> | . | . | . | 89 |
     | 8  | 90 | . | . | . | . | <h3 style="background-color:red; padding:5px">+10</h3> | . | . | . | 99 |
+
+
+## Day 24 - 22/02/2022
+#### ▶️ [Video 19 - Is A Square Attacked #3](https://www.youtube.com/watch?v=cGOEjuSvjoM&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=19)
+
+Showing the attacked squares by the piece
+
+```
+8/8/8/8/3Q4/8/8/8 w KQkq - 0 1
+
+8  -  -  -  X  -  -  -  X 
+7  X  -  -  X  -  -  X  - 
+6  -  X  -  X  -  X  -  - 
+5  -  -  X  X  X  -  -  - 
+4  X  X  X  -  X  X  X  X 
+3  -  -  X  X  X  -  -  - 
+2  -  X  -  X  -  X  -  - 
+1  X  -  -  X  -  -  X  - 
+```

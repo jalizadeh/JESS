@@ -277,8 +277,34 @@ function ParseFen(fen){
 
     UpdateListsMaterial()
 
-    console.log(SqAttacked(41,COLOURS.WHITE))
+    PrintSqAttacked()
 }
+
+
+function PrintSqAttacked(){
+    var sq, file, rank, piece, line = '  '
+
+    console.log('\nAttacked:\n')
+
+    for(file = FILES.FILE_A; file <= FILES.FILE_H; file++){
+        line += (' ' + FileChar[file] + ' ')
+    }
+    console.log(line)
+
+    for(rank = RANKS.RANK_8; rank >= RANKS.RANK_1; rank--){
+        line = ((rank+1) + " ")
+        for(file = FILES.FILE_A; file <=  FILES.FILE_H; file++){
+            sq = FR2SQ(file, rank)
+            if(SqAttacked(sq, GameBoard.side) == true)
+                piece = 'X'
+            else
+                piece = '-'
+            line += (' ' + piece + ' ')
+        }
+        console.log(line)
+    }
+}
+
 
 // "sq" from side's point of view, is under attack?
 function SqAttacked(sq, side){

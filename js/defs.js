@@ -94,7 +94,7 @@ var PieceSlides = [ false, false, false, true, true, true, false, false, false, 
     `KnDir` and `KiDir` contains the distance from all other suares that should be checked with current `sq`
     `RkDir` and `BiDir` contains the distance from current `sq` to the next square that should be checked
 */
-var KnDir = [-8, -12, -19, -21, 8, 9, 12, 21]
+var KnDir = [-8, -12, -19, -21, 8, 12, 19, 21]
 var KiDir = [-1, -9, -10, -11, 1, 9, 10, 11]
 var RkDir = [-1, -10, 1, 10]
 var BiDir = [-9, -11, 9, 11]
