@@ -484,3 +484,7 @@ All together will be
 |  | 0000 | 0000 | 0000 | 1000 | 0000 | 0000 | 0000 | 0000 | PawnStart = val & 0x80000 |
 |  | 0000 | 0000 | 1111 | 0000 | 0000 | 0000 | 0000 | 0000 | PromotedPce = (val >> 20) & 0xF |
 |  | 0000 | 0001 | 0000 | 0000 | 0000 | 0000 | 0000 | 0000 | Castle = val & 0x1000000 |
+
+
+## Day 27 - 25/02/2022
+#### ▶️ [Video 21 - Move Structure / Layout #2](https://www.youtube.com/watch?v=FlTFMbgkycI&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=21)

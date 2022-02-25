@@ -129,3 +129,20 @@ function SQ120(sq64){
 function PIECEINDEX(piece, pieceNum){
     return (piece * 10 + pieceNum)
 }
+
+
+/* --------- Move Structure - video 20 ----------- */
+
+function FROMSQ(m)      { return (m & 0x7F) }
+function TOSQ(m)        { return ((m >> 7) & 0x7F) }
+function CAPTURED(m)    { return ((m >> 14) & 0xF) }
+function PROMOTED(m)    { return ((m >> 20) & 0xF) }
+
+var MFLAGEP = 0x40000   // Move flag En Passant
+var MFLAGPS = 0x80000   // Move flag Pawn Start
+var MFLAGCA = 0x100000  // Move flag Castling
+
+var MFLAGCAP = 0x7C000
+var MFLAGPROM = 0xF00000
+
+var NOMOVE = 0
