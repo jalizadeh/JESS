@@ -421,3 +421,66 @@ Showing the attacked squares by the piece
 2  -  X  -  X  -  X  -  - 
 1  X  -  -  X  -  -  X  - 
 ```
+
+
+## Day 25-27 - 23~25/02/2022
+#### ▶️ [Video 20 - Move Structure / Layout #1](https://www.youtube.com/watch?v=uJeNVhk6yns&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=20)
+
+A `move` contains lots of information.
+1. From Square
+2. To Square
+3. Captured Piece
+4. EnPas Capture
+5. Pawn Start
+6. Promoted Piece
+7. Castling Move
+
+It is possible to store all these data in a Json object
+
+```js
+var Move = {
+    fromSq : 31,
+    toSq : 41,
+    ...
+}
+```
+
+But the problem will be the efficiency of this method. As the object is huge enough to take lots of processing power in move analysis that later we will do. Another solution is keeping all these data in a single variable, using `bitwise` operations.
+
+Considering the following value, it each bit can store a value
+
+| index | #7 | #6 | #5 | #4 | #3 | #2 | #1 | #0 |
+| :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: |
+| binary | 0000 | 0000 | 0000 | 0000 | 0000 | 0000 | 0000 | 0000 |
+| hex | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+
+
+Each of the 7 mentioned parameters, can be represented in bits. For example, `From Square = 21` will be:
+
+| index | #7 | #6 | #5 | #4 | #3 | #2 | #1 | #0 |
+| :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: |
+| binary | 0000 | 0000 | 0000 | 0000 | 0000 | 0000 | 0001 | 0101 |
+| hex | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 5 |
+
+
+The core idea is using the `masking value` to keep only the needed bits. First we need to know the exact space each parameter takes.
+1. From Square : 7 bits
+2. To Square : 7 bits
+3. Captured Piece : 4 bits
+4. EnPas Capture : 1 bit
+5. Pawn Start : 1 bit
+6. Promoted Piece : 4 bits
+7. Castling Move : 1 bit
+
+
+All together will be
+
+| Block | #7 | #6 | #5 | #4 | #3 | #2 | #1 | #0 | Bitwise Masking |
+| :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | ------ |
+|  | 0000 | 0000 | 0000 | 0000 | 0000 | 0000 | 0111 | 1111 | FromSq = val & 0x7F |
+|  | 0000 | 0000 | 0000 | 0000 | 0011 | 1111 | 1000 | 0000 | ToSq = (val >> 7) & 0x7F |
+|  | 0000 | 0000 | 0000 | 0011 | 1100 | 0000 | 0000 | 0000 | Captured = (val >> 14) & 0xF |
+|  | 0000 | 0000 | 0000 | 0100 | 0000 | 0000 | 0000 | 0000 | EP = val & 0x40000 |
+|  | 0000 | 0000 | 0000 | 1000 | 0000 | 0000 | 0000 | 0000 | PawnStart = val & 0x80000 |
+|  | 0000 | 0000 | 1111 | 0000 | 0000 | 0000 | 0000 | 0000 | PromotedPce = (val >> 20) & 0xF |
+|  | 0000 | 0001 | 0000 | 0000 | 0000 | 0000 | 0000 | 0000 | Castle = val & 0x1000000 |
