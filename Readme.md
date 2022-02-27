@@ -475,16 +475,22 @@ The core idea is using the `masking value` to keep only the needed bits. First w
 
 All together will be
 
-| Block | #7 | #6 | #5 | #4 | #3 | #2 | #1 | #0 | Bitwise Masking |
-| :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | ------ |
-|  | 0000 | 0000 | 0000 | 0000 | 0000 | 0000 | 0111 | 1111 | FromSq = val & 0x7F |
-|  | 0000 | 0000 | 0000 | 0000 | 0011 | 1111 | 1000 | 0000 | ToSq = (val >> 7) & 0x7F |
-|  | 0000 | 0000 | 0000 | 0011 | 1100 | 0000 | 0000 | 0000 | Captured = (val >> 14) & 0xF |
-|  | 0000 | 0000 | 0000 | 0100 | 0000 | 0000 | 0000 | 0000 | EP = val & 0x40000 |
-|  | 0000 | 0000 | 0000 | 1000 | 0000 | 0000 | 0000 | 0000 | PawnStart = val & 0x80000 |
-|  | 0000 | 0000 | 1111 | 0000 | 0000 | 0000 | 0000 | 0000 | PromotedPce = (val >> 20) & 0xF |
-|  | 0000 | 0001 | 0000 | 0000 | 0000 | 0000 | 0000 | 0000 | Castle = val & 0x1000000 |
+| #6 | #5 | #4 | #3 | #2 | #1 | #0 | Bitwise Masking |
+| :------: | :------: | :------: | :------: | :------: | :------: | :------: | ------ |
+| 0000 | 0000 | 0000 | 0000 | 0000 | 0111 | 1111 | FromSq = val & 0x7F |
+| 0000 | 0000 | 0000 | 0011 | 1111 | 1000 | 0000 | ToSq = (val >> 7) & 0x7F |
+| 0000 | 0000 | 0011 | 1100 | 0000 | 0000 | 0000 | Captured = (val >> 14) & 0xF |
+| 0000 | 0000 | 0100 | 0000 | 0000 | 0000 | 0000 | EP = val & 0x40000 |
+| 0000 | 0000 | 1000 | 0000 | 0000 | 0000 | 0000 | PawnStart = val & 0x80000 |
+| 0000 | 1111 | 0000 | 0000 | 0000 | 0000 | 0000 | PromotedPce = (val >> 20) & 0xF |
+| 0001 | 0000 | 0000 | 0000 | 0000 | 0000 | 0000 | Castle = val & 0x1000000 |
 
 
 ## Day 27 - 25/02/2022
 #### ▶️ [Video 21 - Move Structure / Layout #2](https://www.youtube.com/watch?v=FlTFMbgkycI&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=21)
+
+
+## Day 28 - 27/02/2022
+#### ▶️ [Video 22 - Move Generation #1](https://www.youtube.com/watch?v=FlTFMbgkycI&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=22)
+
+digesting in progress... 🤦‍♂️
