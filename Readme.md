@@ -449,18 +449,18 @@ But the problem will be the efficiency of this method. As the object is huge eno
 
 Considering the following value, it each bit can store a value
 
-| index | #7 | #6 | #5 | #4 | #3 | #2 | #1 | #0 |
-| :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: |
-| binary | 0000 | 0000 | 0000 | 0000 | 0000 | 0000 | 0000 | 0000 |
-| hex | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| index | #6 | #5 | #4 | #3 | #2 | #1 | #0 |
+| :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: |
+| binary | 0000 | 0000 | 0000 | 0000 | 0000 | 0000 | 0000 |
+| hex | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 
 
 Each of the 7 mentioned parameters, can be represented in bits. For example, `From Square = 21` will be:
 
-| index | #7 | #6 | #5 | #4 | #3 | #2 | #1 | #0 |
-| :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: |
-| binary | 0000 | 0000 | 0000 | 0000 | 0000 | 0000 | 0001 | 0101 |
-| hex | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 5 |
+| index | #6 | #5 | #4 | #3 | #2 | #1 | #0 |
+| :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: |
+| binary | 0000 | 0000 | 0000 | 0000 | 0000 | 0001 | 0101 |
+| hex | 0 | 0 | 0 | 0 | 0 | 1 | 5 |
 
 
 The core idea is using the `masking value` to keep only the needed bits. First we need to know the exact space each parameter takes.
@@ -494,3 +494,8 @@ All together will be
 #### ▶️ [Video 22 - Move Generation #1](https://www.youtube.com/watch?v=FlTFMbgkycI&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=22)
 
 digesting in progress... 🤦‍♂️
+
+## Day 29 - 28/02/2022
+#### ▶️ [Video 23 - Move Generation #2 - Pawns](https://www.youtube.com/watch?v=FlTFMbgkycI&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=23)
+
+still digesting in progress... 🤦‍♂️

@@ -1,13 +1,15 @@
-title;fen;gif
+title;fen;gif;link
 ;rn3k2/pp5Q/2p1b2R/3pR1B1/8/2N5/PPP2K2/8 w - - 1 27;
 Winning in Vera Menchik Style;r5rk/q2b1p1p/1p1p1PpQ/2nPp2P/2P1P3/2N5/Pp6/1K1R1BR1 w - - 0 1;
-Almira's Surprise Party;4q3/4nkbr/pp1P1N1p/4p1pP/P5P1/1B3P2/1P6/3R1RK1 b - - 0 35;NHEzLzRua2JyL3BwMVAxcjFwLzNOc
-Now or Never;2r4k/2r1N2p/3p4/2qP2p1/4Q3/pPp2P2/P7/1K5R b - - 1 39;MnI0ay8ycjRwLzNwNC8ycVAxTnAxLz
-Tangled Up in Glue;8/1pp1kp2/1b2n1p1/pP2K3/2PPP3/1N6/1PN4P/8 w - - 1 2;OC8xcHBrMXAyLzFiMm4xcDEvcFAyS
-Using the Pause Button;5r1k/2p3p1/1q5p/p3p3/4P3/1P2Q1nP/2P1N1P1/R5K1 w - - 1 2;NXIxay8ycDNwMS82cXAvcDNwMy8
-Adding More "Zs" to Your Chess Vocabulary;4r1k1/6bp/pp4p1/2qPp3/2P5/P2P1rP1/5Q2/4RRK1 w - - 0 2;NHJyazEvNmJwL3BwNHAxLzJxUHAz
-Goh Your Own Wei;2br2kQ/5pb1/1q1p2p1/pp4P1/1nr1P3/1N5R/PPP5/1K1B3R b - - 2 30;MmJyMmsxLzVwYjEvMXExcDJwUS9w
-Blasting Zone;5rk1/1pp2r2/p2bp2p/3p4/1P1P3p/P1P2N1P/5Pq1/RQ3RK1 w - - 0 2;NXJrMS8xcHAycjIvcDJicDFxcC8zcDQ
-The Best Moves;rnQ1k2r/pp3ppp/8/q2p4/3P4/4PN2/P2n1PPP/R3KB1R b KQkq - 0 1;cm5iMWsyci9wcDNwcHAvOC9xMnA
-When the Hedgehog Uncoils;2r3k1/1b4p1/pp2p3/2brP2Q/P6P/1P5P/1B4q1/R4R1K w - - 0 29;MnIzazEvMWI0cDEvcHAycDMvMmJy
-Otten's Endgame Touch;8/6b1/5k2/P7/4K1P1/8/8/8 b - - 0 1;OC82YjEvNWsyLzgvUDNLMVAxLzgvO
+Almira's Surprise Party;4q3/4nkbr/pp1P1N1p/4p1pP/P5P1/1B3P2/1P6/3R1RK1 b - - 0 35;NHEzLzRua2JyL3BwMVAxcjFwLzNOc;
+Now or Never;2r4k/2r1N2p/3p4/2qP2p1/4Q3/pPp2P2/P7/1K5R b - - 1 39;MnI0ay8ycjRwLzNwNC8ycVAxTnAxLz;
+Tangled Up in Glue;8/1pp1kp2/1b2n1p1/pP2K3/2PPP3/1N6/1PN4P/8 w - - 1 2;OC8xcHBrMXAyLzFiMm4xcDEvcFAyS;
+Using the Pause Button;5r1k/2p3p1/1q5p/p3p3/4P3/1P2Q1nP/2P1N1P1/R5K1 w - - 1 2;NXIxay8ycDNwMS82cXAvcDNwMy8;
+Adding More "Zs" to Your Chess Vocabulary;4r1k1/6bp/pp4p1/2qPp3/2P5/P2P1rP1/5Q2/4RRK1 w - - 0 2;NHJyazEvNmJwL3BwNHAxLzJxUHAz;
+Goh Your Own Wei;2br2kQ/5pb1/1q1p2p1/pp4P1/1nr1P3/1N5R/PPP5/1K1B3R b - - 2 30;MmJyMmsxLzVwYjEvMXExcDJwUS9w;
+Blasting Zone;5rk1/1pp2r2/p2bp2p/3p4/1P1P3p/P1P2N1P/5Pq1/RQ3RK1 w - - 0 2;NXJrMS8xcHAycjIvcDJicDFxcC8zcDQ;
+The Best Moves;rnQ1k2r/pp3ppp/8/q2p4/3P4/4PN2/P2n1PPP/R3KB1R b KQkq - 0 1;cm5iMWsyci9wcDNwcHAvOC9xMnA;
+When the Hedgehog Uncoils;2r3k1/1b4p1/pp2p3/2brP2Q/P6P/1P5P/1B4q1/R4R1K w - - 0 29;MnIzazEvMWI0cDEvcHAycDMvMmJy;
+Otten's Endgame Touch;8/6b1/5k2/P7/4K1P1/8/8/8 b - - 0 1;OC82YjEvNWsyLzgvUDNLMVAxLzgvO;
+Restriction;8/8/3K4/8/4Q3/8/6pp/7k b - - 1 1;OC84LzNLNC84LzgvNVEyLzZwcC83ay;https://www.chess.com/analysis?fen=8/8/3K4/8/8/5Q2/6pp/7k%20w%20-%20-%200%201&flip=false&pgn=%5BEvent%20%22?%22%5D%0A%5BSite%20%22?%22%5D%0A%5BDate%20%22????.??.??%22%5D%0A%5BRound%20%22?%22%5D%0A%5BWhite%20%22?%22%5D%0A%5BBlack%20%22?%22%5D%0A%5BResult%20%221-0%22%5D%0A%5BSetUp%20%221%22%5D%0A%5BFEN%20%228/8/3K4/8/8/5Q2/6pp/7k%20w%20-%20-%200%201%22%5D%0A%0A1.%20Qe4%20Kg1%202.%20Qe1%23%201-0
+Contemplating the Captures;2r2r2/5pkp/bp1qp1p1/p1Pp4/Pn6/1PQ2N1P/2P1BPP1/4RRK1 b - - 0 1;MnIycjIvNXBrcC9icDFxcDFwMS9wMX;https://www.chess.com/analysis?fen=2r2r2/5pkp/bp1qp1p1/p1pp4/Pn1P4/1PQ2N1P/2P1BPP1/4RRK1%20w%20-%20-%200%201&flip=false&pgn=%5BEvent%20%22?%22%5D%0A%5BSite%20%22?%22%5D%0A%5BDate%20%22????.??.??%22%5D%0A%5BRound%20%22?%22%5D%0A%5BWhite%20%22?%22%5D%0A%5BBlack%20%22?%22%5D%0A%5BResult%20%22*%22%5D%0A%5BSetUp%20%221%22%5D%0A%5BFEN%20%222r2r2/5pkp/bp1qp1p1/p1pp4/Pn1P4/1PQ2N1P/2P1BPP1/4RRK1%20w%20-%20-%200%201%22%5D%0A%0A1.%20dxc5%2B%20Kg8%202.%20Qxb4%20axb4%203.%20cxd6%20*
