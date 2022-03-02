@@ -504,3 +504,8 @@ still digesting in progress... 🤦‍♂️
 #### ▶️ [Video 24 - Move Generation #3 - Castling](https://www.youtube.com/watch?v=FlTFMbgkycI&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=24)
 
 still digesting in progress... 🤦‍♂️
+
+## Day 31 - 2/03/2022
+#### ▶️ [Video 25 - Move Generation #4 - NonSlide Pieces](https://www.youtube.com/watch?v=FlTFMbgkycI&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=25)
+
+still digesting in progress... 🤦‍♂️

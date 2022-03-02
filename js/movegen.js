@@ -23,7 +23,7 @@ function MOVE(from, to, captured, promoted, flag){
 function GenerateMove(){
     GameBoard.moveListStart[GameBoard.ply+1] = GameBoard.moveListStart[GameBoard.ply]
 
-    var pceType, pceNum, sq
+    var pceType, pceNum, sq, pceIndex, pce, t_sq
 
     if(GameBoard.side == COLOURS.WHITE){
         pceType = PIECES.wP
@@ -73,8 +73,6 @@ function GenerateMove(){
             }
         }
 
-        pceType = PIECES.wN
-        
     } else {
         pceType = PIECES.bP
 
@@ -122,8 +120,8 @@ function GenerateMove(){
                 }
             }
         }
+    } // else end
 
-
-        pceType = PIECES.bN
-    }
+    // get pce for side wN, wK
+    // loop all dir for pce -> need to know num dir for pce
 }

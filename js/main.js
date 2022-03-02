@@ -3,6 +3,7 @@ $(function() {
     console.info("Main init called")
     ParseFen(START_FEN)
     PrintBoard()
+    GenerateMove()
 })
 
 
