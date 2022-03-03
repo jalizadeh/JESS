@@ -1,9 +1,3 @@
-//returns the index of the given piece in the array "pList"
-function PIECEINDEX(piece, pieceNum){
-    return (piece * 10 + pieceNum)
-}
-
-
 // It will hold the current state and data of the board
 const GameBoard = {}
 

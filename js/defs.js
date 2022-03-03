@@ -100,13 +100,13 @@ var RkDir = [-1, -10, 1, 10]
 var BiDir = [-9, -11, 9, 11]
 
 var DirNum = [0, 0, 8, 4, 4, 8, 8, 0, 8, 4, 4, 8, 8]
-var PceDir = [0, 0, KnDir, BiDri, RkDir, KiDir, KiDir, 0, KnDir, BiDir, RkDir, KiDir, KiDir]
+var PceDir = [0, 0, KnDir, BiDir, RkDir, KiDir, KiDir, 0, KnDir, BiDir, RkDir, KiDir, KiDir]
 var LoopNonSlidePce = [PIECES.wN, PIECES.wK, 0, PIECES.bN, PIECES.bK, 0]
-var LoopnonSlideIndex = [0, 3]
+var LoopNonSlideIndex = [0, 3]
 
 /*
     while(pce!=0){
-        pceInde = LoopnonSlideIndex[WHITE] (0)
+        pceIndex = LoopnonSlideIndex[WHITE] (0)
         pce = LoopNonSlidePce[pceIndex] (wN)
         pceIndex++
         loop pceDir[wN][0 - 8]
@@ -140,6 +140,7 @@ function SQ120(sq64){
     return Sq64ToSq120[sq64]
 }
 
+//returns the index of the given piece in the array "pList"
 function PIECEINDEX(piece, pieceNum){
     return (piece * 10 + pieceNum)
 }

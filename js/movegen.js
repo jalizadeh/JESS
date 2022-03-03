@@ -23,13 +23,13 @@ function MOVE(from, to, captured, promoted, flag){
 function GenerateMove(){
     GameBoard.moveListStart[GameBoard.ply+1] = GameBoard.moveListStart[GameBoard.ply]
 
-    var pceType, pceNum, sq, pceIndex, pce, t_sq
+    var pceType, pceNum, sq, pceIndex, pce, t_sq, dir
 
     if(GameBoard.side == COLOURS.WHITE){
         pceType = PIECES.wP
 
-        for(pceNum = 0; pceNum < GameBoard.pceNum[pceType]; pceNum++){
-            sq = GameBoard.pList[PCEINDEX(pceType, pceNum)]
+        for(pceNum = 0; pceNum < GameBoard.pieceNum[pceType]; pceNum++){
+            sq = GameBoard.pList[PIECEINDEX(pceType, pceNum)]
 
             if(GameBoard.pieces[sq + 10] == PIECES.EMPTY){
                 // Add Pawn move here
@@ -76,8 +76,8 @@ function GenerateMove(){
     } else {
         pceType = PIECES.bP
 
-        for(pceNum = 0; pceNum < GameBoard.pceNum[pceType]; pceNum++){
-            sq = GameBoard.pList[PCEINDEX(pceType, pceNum)]
+        for(pceNum = 0; pceNum < GameBoard.pieceNum[pceType]; pceNum++){
+            sq = GameBoard.pList[PIECEINDEX(pceType, pceNum)]
 
             if(GameBoard.pieces[sq - 10] == PIECES.EMPTY){
                 // Add Pawn move here
@@ -124,4 +124,32 @@ function GenerateMove(){
 
     // get pce for side wN, wK
     // loop all dir for pce -> need to know num dir for pce
+
+    pceIndex = LoopNonSlideIndex[GameBoard.side]
+    pce = LoopNonSlidePce[pceIndex++]
+
+    while(pce != 0){
+        for(pceNum = 0; pceNum < GameBoard.pceNum[pce]; pceNum++){
+            sq = GameBoard.pList[PIECEINDEX(pce, pceNum)]
+
+            for(index = 0; index < DirNum[pce]; index++){
+                dir = PceDir[pce][index]
+                t_sq = sq + dir
+
+                if(SQOFFBOARD(t_sq) == true){
+                    continue
+                }
+
+                if(GameBoard.pieces[t_sq] != PIECES.EMPTY){
+                    if(PieceCol[GameBoard.pieces[t_sq]] != GameBoard.side){
+                        // Add capture
+                    } else {
+                        // Quiet move
+                    }
+                }
+            }
+        }
+
+        pce = LoopNonSlidePce[pceIndex++]
+    }
 }
