@@ -514,3 +514,8 @@ still digesting in progress... 🤦‍♂️
 #### ▶️ [Video 26 - Move Generation #5 - NonSlide Pieces](https://www.youtube.com/watch?v=FlTFMbgkycI&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=26)
 
 still digesting in progress... I need to see the results and then go back to video 22 to analyze more
+
+## Day 33 - 7/03/2022
+#### ▶️ [Video 27 - Move Generation #6 - Sliding Pieces](https://www.youtube.com/watch?v=FlTFMbgkycI&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=27)
+
+still digesting in progress...
