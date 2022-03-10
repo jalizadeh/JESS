@@ -2,6 +2,20 @@ function MOVE(from, to, captured, promoted, flag){
     return (from | (to << 7) | (captured << 14) | (promoted << 20) | flag)
 }
 
+function AddCaptureMove(move){
+    GameBoard.moveList[GameBoard.moveListStart[GameBoard.ply + 1]] = move
+    GameBoard.moveScores[GameBoard.moveListStart[GameBoard.ply + 1]++] = 0
+}
+
+function AddQuietMove(move){
+    GameBoard.moveList[GameBoard.moveListStart[GameBoard.ply + 1]] = move
+    GameBoard.moveScores[GameBoard.moveListStart[GameBoard.ply + 1]++] = 0
+}
+
+function AddEnPassantMove(move){
+    GameBoard.moveList[GameBoard.moveListStart[GameBoard.ply + 1]] = move
+    GameBoard.moveScores[GameBoard.moveListStart[GameBoard.ply + 1]++] = 0
+}
 
 /*
     GameBoard.moveListStart[] -> 'index' for the first move at a given ply
@@ -142,9 +156,9 @@ function GenerateMove(){
 
                 if(GameBoard.pieces[t_sq] != PIECES.EMPTY){
                     if(PieceCol[GameBoard.pieces[t_sq]] != GameBoard.side){
-                        // Add capture
+                        AddCaptureMove( MOVE(sq, t_sq, GameBoard.pieces[t_sq], PIECES.EMPTY, 0) )
                     } else {
-                        // Quiet move
+                        AddQuietMove( MOVE(sq, t_sq, PIECES.EMPTY, PIECES.EMPTY, 0) )
                     }
                 }
             }
@@ -168,12 +182,12 @@ function GenerateMove(){
                 while( SQOFFBOARD(t_sq) == false ){
                     if(GameBoard.pieces[t_sq] != PIECES.EMPTY){
                         if(PieceCol[GameBoard.pieces[t_sq]] != GameBoard.side){
-                            // Add capture
+                            AddCaptureMove( MOVE(sq, t_sq, GameBoard.pieces[t_sq], PIECES.EMPTY, 0) )
                         }
                         break
                     }
 
-                    // Add Quiet move
+                    AddQuietMove( MOVE(sq, t_sq, PIECES.EMPTY, PIECES.EMPTY, 0) )
                     t_sq += dir
                 }
             }
