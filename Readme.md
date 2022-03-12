@@ -529,3 +529,9 @@ still digesting in progress... very close to good results...
 #### ▶️ [Video 29 - Move Generation #7 - Quiet Moves](https://www.youtube.com/watch?v=FlTFMbgkycI&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=29)
 
 still digesting in progress... very close to good results...
+
+
+## Day 36 - 12/03/2022
+#### ▶️ [Video 30 - Move Generation #8 - Printing the move list](https://www.youtube.com/watch?v=FlTFMbgkycI&list=PLZ1QII7yudbe4gz2gh9BCI6VDA-xafLog&index=30)
+
+move generation is complete, there should be 20 moves at the begining
